@@ -117,80 +117,12 @@
     startTyping();
   });
 
-  const featuredFilters = Array.from(document.querySelectorAll(".work-filter[data-filter]"));
-  const featuredWorks = Array.from(document.querySelectorAll(".featured-work[data-categories]"));
-  const filterLabel = document.querySelector("[data-filter-label]");
-  const filterCount = document.querySelector("[data-filter-count]");
-
-  if (featuredFilters.length > 0 && featuredWorks.length > 0) {
-    let activeFilter = "";
-
-    featuredWorks.forEach(function (card) {
-      card.addEventListener("animationend", function () {
-        card.classList.remove("is-revealing");
-      });
-    });
-
-    function updateFilter(filterName) {
-      activeFilter = filterName;
-
-      featuredFilters.forEach(function (button) {
-        const isActive = activeFilter !== "" && button.getAttribute("data-filter") === activeFilter;
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", isActive ? "true" : "false");
-      });
-
-      let visibleCount = 0;
-
-      featuredWorks.forEach(function (card) {
-        const categories = (card.getAttribute("data-categories") || "").split(/\s+/).filter(Boolean);
-        const matches = activeFilter === "" || categories.includes(activeFilter);
-
-        card.classList.remove("is-revealing");
-        card.hidden = !matches;
-
-        if (matches) {
-          visibleCount += 1;
-          window.requestAnimationFrame(function () {
-            card.classList.add("is-revealing");
-          });
-        }
-      });
-
-      const activeButton = featuredFilters.find(function (button) {
-        return button.classList.contains("is-active");
-      });
-
-      if (filterLabel) {
-        filterLabel.textContent = activeButton
-          ? activeButton.querySelector(".work-filter__label").textContent
-          : "All disciplines";
-      }
-
-      if (filterCount) {
-        filterCount.textContent = visibleCount + (visibleCount === 1 ? " selected work" : " selected works");
-      }
-    }
-
-    featuredFilters.forEach(function (button) {
-      button.addEventListener("click", function () {
-        const nextFilter = activeFilter === button.getAttribute("data-filter")
-          ? ""
-          : button.getAttribute("data-filter") || "";
-
-        updateFilter(nextFilter);
-      });
-    });
-
-    updateFilter("");
-  }
-
   const featuredProjects = [
     {
       title: "Zeragrains",
       description:
         "A brand rooted in heritage, sustainability, and authenticity. This packaging design for Thai Jasmine Rice reflects the elegance of Thai culture while maintaining functionality and clear communication. A harmonious blend of tradition and modern branding.",
-      tags: ["Packaging Design", "Brand Identity", "Logo Design"],
+      tags: ["Packaging Design", "Brand Identity", "Logo Design", "3D Visualization"],
       images: [
         "assets/img/featured-img/img-1-1.png",
         "assets/img/featured-img/img-1-2.png",
@@ -202,7 +134,7 @@
       title: "CQUARE Website",
       description:
         "'CQUARE' is more than a brand; it's your gateway to effortless fashion. The mission? To bring you closer to your wardrobe dreams with just a click. I believe in the power of choice, the elegance of simplicity, and the accessibility of fashion for everyone. From the minimalistic design of the logo to the seamless experience of the website, every thread we weave is crafted with your convenience in mind.",
-      tags: ["Web Design", "UX/UI", "Concept Design"],
+      tags: ["Web/App Design", "Logo Design", "Brand Identity"],
       images: [
         "assets/img/featured-img/img-2-1.png",
         "assets/img/featured-img/img-2-2.png",
@@ -213,7 +145,7 @@
     {
       title: "Sailer Branding",
       description: "A coastal-inspired visual identity and social media campaign designed to promote Sailer Resort through a clean, tropical, and travel-focused brand experience.",
-      tags: ["Brand Identity", "Social Media Design", "Campaign Design"],
+      tags: ["Brand Identity", "Logo Design", "Graphic Design"],
       images: ["assets/img/featured-img/img-3-1.png", "assets/img/featured-img/img-3-2.png"],
     },
     {
@@ -230,48 +162,48 @@
     {
       title: "Training Campaign",
       description: "A high-impact promotional visual designed to capture attention and drive sign-ups for a professional training event.",
-      tags: ["Graphic Design", "Campaign Design", "Marketing"],
+      tags: ["Graphic Design"],
       images: ["assets/img/featured-img/img-5-1.png"],
     },
     {
       title: "LINE OA Experience",
       description:
         "A modular rich menu system designed to guide users through eco-friendly travel choices with clarity, structure, and intuitive interaction.",
-      tags: ["UI Design", "System Design", "UX Design"],
+      tags: ["Web/App Design"],
       images: ["assets/img/featured-img/img-6-1.png", "assets/img/featured-img/img-6-2.png"],
     },
     {
       title: "Vacation Bible School Campaign",
       description:
         "An engaging event visual designed to communicate key information clearly while maintaining a playful and energetic tone.",
-      tags: ["Poster Design", "Event Design", "Graphic Design"],
+      tags: ["Graphic Design"],
       images: ["assets/img/featured-img/img-7-1.png", "assets/img/featured-img/img-7-2.png"],
     },
     {
       title: "Medical Product Brochure",
       description:
         "A structured brochure designed to communicate product reliability, range, and mission-driven impact with clarity and trust.",
-      tags: ["Brochure Design", "Medical Product", "Layout Design"],
+      tags: ["Brochure Design"],
       images: ["assets/img/featured-img/img-8-1.png", "assets/img/featured-img/img-8-2.png"],
     },
     {
       title: "Infrastructure Company Brochure",
       description:
         "A corporate brochure designed to present complex service information with clarity while reinforcing a strong and credible brand presence.",
-      tags: ["Brochure Design", "Corporate Identity", "Information Design"],
+      tags: ["Brochure Design", "Brand Identity"],
       images: ["assets/img/featured-img/img-9-1.png", "assets/img/featured-img/img-9-2.png"],
     },
     {
       title: "VitalNest Branding",
       description: "A premium packaging design for a wellness brand, crafted to communicate quality, calmness, and trust through a nature-inspired visual identity.",
-      tags: ["Packaging Design", "Brand Identity", "Visual Design"],
+      tags: ["Packaging Design", "Brand Identity", "3D Visualization"],
       images: ["assets/img/featured-img/img-10-1.png", "assets/img/featured-img/img-10-2.png"],
     },
     {
       title: "PLEō Brand Identity",
       description:
         "A cohesive brand system for a microgreens startup, positioning the product as a premium health offering through clean visuals and consistent storytelling.",
-      tags: ["Brand System", "Product Design", "Visual Identity"],
+      tags: ["Brand Identity", "Logo Design"],
       images: [
         "assets/img/featured-img/img-11-1.png",
         "assets/img/featured-img/img-11-2.png",
@@ -284,27 +216,27 @@
       title: "Believe – Youth Camp Campaign",
       description:
         "A campaign visual designed to inspire emotional connection and clearly communicate the message of a youth camp experience.",
-      tags: ["Campaign Design", "Poster Design", "Visual Storytelling"],
+      tags: ["Graphic Design"],
       images: ["assets/img/featured-img/img-12-1.png", "assets/img/featured-img/img-12-2.png"],
     },
     {
       title: "Training Campaign Poster",
       description: "A promotional poster designed to capture attention and drive attendance for a professional talk and training event.",
-      tags: ["Poster Design", "Marketing", "Campaign Design"],
+      tags: ["Graphic Design"],
       images: ["assets/img/featured-img/img-13-1.png"],
     },
     {
       title: "Corporate Website",
       description:
         "A corporate website redesign focused on strengthening brand credibility and showcasing global manufacturing experience and export capability.",
-      tags: ["Web Design", "Corporate Website", "UX/UI"],
+      tags: ["Web/App Design", "Brand Identity"],
       images: ["assets/img/featured-img/img-14-1.png", "assets/img/featured-img/img-14-2.png"],
     },
     {
       title: "Food Decision App",
       description:
         "A mobile UI concept designed to simplify food decision-making by guiding users through choices in an intuitive and engaging way.",
-      tags: ["UI Design", "UX Design", "Product Design"],
+      tags: ["Web/App Design", "Brand Identity", "Logo Design"],
       images: [
         "assets/img/featured-img/img-15-1.png",
         "assets/img/featured-img/img-15-2.png",
@@ -314,6 +246,74 @@
       ],
     },
   ];
+  const featuredWorkCards = Array.from(document.querySelectorAll(".featured-work-card[data-project-index]"));
+  const featuredWorkFilters = document.querySelector("[data-featured-filters]");
+
+  function initializeFeaturedWorkFilters() {
+    if (!featuredWorkFilters || featuredWorkCards.length === 0 || featuredProjects.length === 0) {
+      return;
+    }
+
+    const selectedTags = new Set();
+    const uniqueTags = [
+      "Brand Identity",
+      "Packaging Design",
+      "Logo Design",
+      "Brochure Design",
+      "3D Visualization",
+      "Web/App Design",
+      "Graphic Design",
+    ];
+
+    function matchesSelectedTags(projectTags) {
+      if (selectedTags.size === 0) {
+        return true;
+      }
+
+      return projectTags.some(function (tag) {
+        return selectedTags.has(tag);
+      });
+    }
+
+    function updateFeaturedWorkVisibility() {
+      featuredWorkCards.forEach(function (card) {
+        const rawIndex = card.getAttribute("data-project-index") || "";
+        const projectIndex = parseInt(rawIndex, 10) - 1;
+        const project = featuredProjects[projectIndex];
+        const projectTags = project && Array.isArray(project.tags) ? project.tags : [];
+        const isVisible = matchesSelectedTags(projectTags);
+        card.hidden = !isVisible;
+      });
+    }
+
+    function renderFilterButtons() {
+      featuredWorkFilters.innerHTML = "";
+
+      uniqueTags.forEach(function (tag) {
+        const button = document.createElement("button");
+        const isActive = selectedTags.has(tag);
+        button.type = "button";
+        button.className = "featured-work-filter" + (isActive ? " is-active" : "");
+        button.textContent = tag;
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        button.addEventListener("click", function () {
+          if (selectedTags.has(tag)) {
+            selectedTags.delete(tag);
+          } else {
+            selectedTags.add(tag);
+          }
+          renderFilterButtons();
+          updateFeaturedWorkVisibility();
+        });
+        featuredWorkFilters.appendChild(button);
+      });
+    }
+
+    renderFilterButtons();
+    updateFeaturedWorkVisibility();
+  }
+
+  initializeFeaturedWorkFilters();
 
   const featuredModal = document.getElementById("featured-work-modal");
   const featuredModalBackdrop = featuredModal ? featuredModal.querySelector(".featured-modal__backdrop") : null;
@@ -580,7 +580,7 @@
       scrollFeaturedCarouselBy(1);
     });
 
-    document.querySelectorAll(".featured-work-card[data-project-index]").forEach(function (card) {
+    featuredWorkCards.forEach(function (card) {
       function openFromCard() {
         const raw = card.getAttribute("data-project-index") || "";
         const idx = parseInt(raw, 10);
