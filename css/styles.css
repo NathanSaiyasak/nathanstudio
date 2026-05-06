@@ -1125,21 +1125,17 @@ img {
   transition: all 0.2s ease;
 }
 
-/* Mouse/tap focus: no UA blue ring. Keyboard: custom ring via :focus-visible. */
-.featured-modal__arrow:focus {
+/* No outer focus ring on the circular arrows (UA or custom outline). */
+.featured-modal__arrow:focus,
+.featured-modal__arrow:focus-visible {
   outline: none;
+  box-shadow: none;
 }
 
-.featured-modal__arrow:hover {
-  background: #fff;
-  transform: scale(1.05);
-}
-
+.featured-modal__arrow:hover,
 .featured-modal__arrow:focus-visible {
   background: #fff;
   transform: scale(1.05);
-  outline: 2px solid var(--gold-soft);
-  outline-offset: 3px;
 }
 
 .featured-modal__arrow svg {
