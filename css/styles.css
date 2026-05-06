@@ -966,20 +966,38 @@ img {
 }
 
 /*
- * Desktop width: explicit caption (23rem) + square media (matches panel height cap).
- * Avoid width: min(max-content, 100%) here — Safari resolves max-content with the
- * carousel flex item at min-width:0 / flex-shrink, collapsing the image column to 0.
+ * Desktop: two-column layout uses CSS Grid on .featured-modal__scroll (carousel + body
+ * are direct children — not .featured-modal__panel). Safari still collapses the carousel
+ * to 0 when this row is flex: base .featured-modal__carousel has min-width:0 and
+ * flex-shrink:1; flex intrinsic sizing + percentage bases differ from Chrome.
  */
 @media (min-width: 946px) {
   .featured-modal__panel {
     width: min(calc(23rem + min(76vh, 52rem)), calc(100vw - 4rem));
   }
 
+  .featured-modal__scroll {
+    display: grid;
+    grid-template-columns: min(76vh, 52rem) 23rem;
+    grid-template-rows: minmax(0, 1fr);
+    align-items: stretch;
+    justify-items: stretch;
+    column-gap: 0;
+  }
+
   .featured-modal__carousel {
-    flex: 0 0 auto;
-    flex-shrink: 0;
-    width: min(76vh, 52rem);
-    max-width: calc(100% - 23rem);
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    flex: none;
+  }
+
+  .featured-modal__body.featured-modal__content {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
   }
 }
 
@@ -991,9 +1009,8 @@ img {
     width: min(calc(23rem + min(74vh, 50rem)), calc(100vw - 4rem));
   }
 
-  .featured-modal__carousel {
-    width: min(74vh, 50rem);
-    max-width: calc(100% - 23rem);
+  .featured-modal__scroll {
+    grid-template-columns: min(74vh, 50rem) 23rem;
   }
 }
 
