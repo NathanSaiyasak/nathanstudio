@@ -124,10 +124,10 @@
         "A brand rooted in heritage, sustainability, and authenticity. This packaging design for Thai Jasmine Rice reflects the elegance of Thai culture while maintaining functionality and clear communication. A harmonious blend of tradition and modern branding.",
       tags: ["Packaging Design", "Brand Identity", "Logo Design", "3D Visualization"],
       images: [
-        "assets/img/featured-img/img-1-1.png",
-        "assets/img/featured-img/img-1-2.png",
-        "assets/img/featured-img/img-1-3.png",
-        "assets/img/featured-img/img-1-4.png",
+        "assets/img/featured-img/img-1-1.webp",
+        "assets/img/featured-img/img-1-2.webp",
+        "assets/img/featured-img/img-1-3.webp",
+        "assets/img/featured-img/img-1-4.webp",
       ],
     },
     {
@@ -136,17 +136,17 @@
         "'CQUARE' is more than a brand; it's your gateway to effortless fashion. The mission? To bring you closer to your wardrobe dreams with just a click. I believe in the power of choice, the elegance of simplicity, and the accessibility of fashion for everyone. From the minimalistic design of the logo to the seamless experience of the website, every thread we weave is crafted with your convenience in mind.",
       tags: ["Web/App Design", "Logo Design", "Brand Identity"],
       images: [
-        "assets/img/featured-img/img-2-1.png",
-        "assets/img/featured-img/img-2-2.png",
-        "assets/img/featured-img/img-2-3.png",
-        "assets/img/featured-img/img-2-4.png",
+        "assets/img/featured-img/img-2-1.webp",
+        "assets/img/featured-img/img-2-2.webp",
+        "assets/img/featured-img/img-2-3.webp",
+        "assets/img/featured-img/img-2-4.webp",
       ],
     },
     {
       title: "Sailer Branding",
       description: "A coastal-inspired visual identity and social media campaign designed to promote Sailer Resort through a clean, tropical, and travel-focused brand experience.",
       tags: ["Brand Identity", "Logo Design", "Graphic Design"],
-      images: ["assets/img/featured-img/img-3-1.png", "assets/img/featured-img/img-3-2.png"],
+      images: ["assets/img/featured-img/img-3-1.webp", "assets/img/featured-img/img-3-2.webp"],
     },
     {
       title: "LYDUS – Brand & Packaging System",
@@ -154,50 +154,50 @@
         "An end-to-end design system for LYDUS nitrile gloves, spanning branding, packaging, 3D renders, and marketing visuals. Built to communicate clarity, trust, and consistency across both medical and commercial contexts.",
       tags: ["Brand Identity", "Packaging Design", "3D Visualization"],
       images: [
-        "assets/img/featured-img/img-4-1.png",
-        "assets/img/featured-img/img-4-2.png",
-        "assets/img/featured-img/img-4-3.png",
+        "assets/img/featured-img/img-4-1.webp",
+        "assets/img/featured-img/img-4-2.webp",
+        "assets/img/featured-img/img-4-3.webp",
       ],
     },
     {
       title: "Training Campaign",
       description: "A high-impact promotional visual designed to capture attention and drive sign-ups for a professional training event.",
       tags: ["Graphic Design"],
-      images: ["assets/img/featured-img/img-5-1.png"],
+      images: ["assets/img/featured-img/img-5-1.webp"],
     },
     {
       title: "LINE OA Experience",
       description:
         "A modular rich menu system designed to guide users through eco-friendly travel choices with clarity, structure, and intuitive interaction.",
       tags: ["Web/App Design"],
-      images: ["assets/img/featured-img/img-6-1.png", "assets/img/featured-img/img-6-2.png"],
+      images: ["assets/img/featured-img/img-6-1.webp", "assets/img/featured-img/img-6-2.webp"],
     },
     {
       title: "Vacation Bible School Campaign",
       description:
         "An engaging event visual designed to communicate key information clearly while maintaining a playful and energetic tone.",
       tags: ["Graphic Design"],
-      images: ["assets/img/featured-img/img-7-1.png", "assets/img/featured-img/img-7-2.png"],
+      images: ["assets/img/featured-img/img-7-1.webp", "assets/img/featured-img/img-7-2.webp"],
     },
     {
       title: "Medical Product Brochure",
       description:
         "A structured brochure designed to communicate product reliability, range, and mission-driven impact with clarity and trust.",
       tags: ["Brochure Design"],
-      images: ["assets/img/featured-img/img-8-1.png", "assets/img/featured-img/img-8-2.png"],
+      images: ["assets/img/featured-img/img-8-1.webp", "assets/img/featured-img/img-8-2.webp"],
     },
     {
       title: "Infrastructure Company Brochure",
       description:
         "A corporate brochure designed to present complex service information with clarity while reinforcing a strong and credible brand presence.",
       tags: ["Brochure Design", "Brand Identity"],
-      images: ["assets/img/featured-img/img-9-1.png", "assets/img/featured-img/img-9-2.png"],
+      images: ["assets/img/featured-img/img-9-1.webp", "assets/img/featured-img/img-9-2.webp"],
     },
     {
       title: "VitalNest Branding",
       description: "A premium packaging design for a wellness brand, crafted to communicate quality, calmness, and trust through a nature-inspired visual identity.",
       tags: ["Packaging Design", "Brand Identity", "3D Visualization"],
-      images: ["assets/img/featured-img/img-10-1.png", "assets/img/featured-img/img-10-2.png"],
+      images: ["assets/img/featured-img/img-10-1.webp", "assets/img/featured-img/img-10-2.webp"],
     },
     {
       title: "PLEō Brand Identity",
@@ -205,11 +205,11 @@
         "A cohesive brand system for a microgreens startup, positioning the product as a premium health offering through clean visuals and consistent storytelling.",
       tags: ["Brand Identity", "Logo Design"],
       images: [
-        "assets/img/featured-img/img-11-1.png",
-        "assets/img/featured-img/img-11-2.png",
-        "assets/img/featured-img/img-11-3.png",
-        "assets/img/featured-img/img-11-4.png",
-        "assets/img/featured-img/img-11-5.png",
+        "assets/img/featured-img/img-11-1.webp",
+        "assets/img/featured-img/img-11-2.webp",
+        "assets/img/featured-img/img-11-3.webp",
+        "assets/img/featured-img/img-11-4.webp",
+        "assets/img/featured-img/img-11-5.webp",
       ],
     },
     {
@@ -217,20 +217,20 @@
       description:
         "A campaign visual designed to inspire emotional connection and clearly communicate the message of a youth camp experience.",
       tags: ["Graphic Design"],
-      images: ["assets/img/featured-img/img-12-1.png", "assets/img/featured-img/img-12-2.png"],
+      images: ["assets/img/featured-img/img-12-1.webp", "assets/img/featured-img/img-12-2.webp"],
     },
     {
       title: "Training Campaign Poster",
       description: "A promotional poster designed to capture attention and drive attendance for a professional talk and training event.",
       tags: ["Graphic Design"],
-      images: ["assets/img/featured-img/img-13-1.png"],
+      images: ["assets/img/featured-img/img-13-1.webp"],
     },
     {
       title: "Corporate Website",
       description:
         "A corporate website redesign focused on strengthening brand credibility and showcasing global manufacturing experience and export capability.",
       tags: ["Web/App Design", "Brand Identity"],
-      images: ["assets/img/featured-img/img-14-1.png", "assets/img/featured-img/img-14-2.png"],
+      images: ["assets/img/featured-img/img-14-1.webp", "assets/img/featured-img/img-14-2.webp"],
     },
     {
       title: "Food Decision App",
@@ -238,11 +238,11 @@
         "A mobile UI concept designed to simplify food decision-making by guiding users through choices in an intuitive and engaging way.",
       tags: ["Web/App Design", "Brand Identity", "Logo Design"],
       images: [
-        "assets/img/featured-img/img-15-1.png",
-        "assets/img/featured-img/img-15-2.png",
-        "assets/img/featured-img/img-15-3.png",
-        "assets/img/featured-img/img-15-4.png",
-        "assets/img/featured-img/img-15-5.png",
+        "assets/img/featured-img/img-15-1.webp",
+        "assets/img/featured-img/img-15-2.webp",
+        "assets/img/featured-img/img-15-3.webp",
+        "assets/img/featured-img/img-15-4.webp",
+        "assets/img/featured-img/img-15-5.webp",
       ],
     },
   ];

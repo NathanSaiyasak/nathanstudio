@@ -1,1 +1,4 @@
 .DS_Store
+
+# Local PNG backups after WebP migration (large); remove this line to version them
+assets/img-originals/
