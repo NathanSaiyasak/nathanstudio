@@ -972,14 +972,22 @@ img {
  * flex-shrink:1; flex intrinsic sizing + percentage bases differ from Chrome.
  */
 @media (min-width: 946px) {
+  /*
+   * One square side length for column width, row height, and panel height — avoids a
+   * tall grid row with a narrower column (1fr + min-height: 36rem / height caps),
+   * which left bands above/below the media. object-fit: cover fills the square.
+   */
   .featured-modal__panel {
     width: min(calc(23rem + min(76vh, 52rem)), calc(100vw - 4rem));
+    height: min(76vh, 52rem);
+    min-height: unset;
+    max-height: none;
   }
 
   .featured-modal__scroll {
     display: grid;
     grid-template-columns: min(76vh, 52rem) 23rem;
-    grid-template-rows: minmax(0, 1fr);
+    grid-template-rows: min(76vh, 52rem);
     align-items: stretch;
     justify-items: stretch;
     column-gap: 0;
@@ -992,6 +1000,8 @@ img {
     min-width: 0;
     max-width: none;
     flex: none;
+    aspect-ratio: auto;
+    max-height: none;
   }
 
   .featured-modal__body.featured-modal__content {
@@ -999,18 +1009,24 @@ img {
     grid-row: 1;
     min-width: 0;
   }
+
+  .featured-modal__slide img {
+    object-fit: cover;
+  }
 }
 
 /* Desktop only: slightly smaller modal on short viewports (e.g. small laptops) */
 @media (min-width: 946px) and (max-height: 880px) {
   .featured-modal__panel {
-    height: 74vh;
-    max-height: 50rem;
+    height: min(74vh, 50rem);
+    min-height: unset;
+    max-height: none;
     width: min(calc(23rem + min(74vh, 50rem)), calc(100vw - 4rem));
   }
 
   .featured-modal__scroll {
     grid-template-columns: min(74vh, 50rem) 23rem;
+    grid-template-rows: min(74vh, 50rem);
   }
 }
 
@@ -1109,10 +1125,21 @@ img {
   transition: all 0.2s ease;
 }
 
-.featured-modal__arrow:hover,
+/* Mouse/tap focus: no UA blue ring. Keyboard: custom ring via :focus-visible. */
+.featured-modal__arrow:focus {
+  outline: none;
+}
+
+.featured-modal__arrow:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
 .featured-modal__arrow:focus-visible {
   background: #fff;
   transform: scale(1.05);
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 3px;
 }
 
 .featured-modal__arrow svg {
