@@ -325,6 +325,7 @@
   const featuredModalTags = featuredModal ? featuredModal.querySelector("[data-featured-tags]") : null;
   const featuredModalPrev = featuredModal ? featuredModal.querySelector("[data-featured-carousel-prev]") : null;
   const featuredModalNext = featuredModal ? featuredModal.querySelector("[data-featured-carousel-next]") : null;
+  const featuredModalPanel = featuredModal ? featuredModal.querySelector(".featured-modal__panel") : null;
   let featuredModalLastFocus = null;
   let featuredCarouselIndex = 0;
   let featuredCarouselSlideCount = 0;
@@ -537,10 +538,7 @@
       layoutFeaturedCarousel();
       window.requestAnimationFrame(function () {
         layoutFeaturedCarousel();
-        let focusTarget = featuredModalTitle;
-        if (featuredCarouselSlideCount > 1 && featuredModalPrev && featuredModalPrev.hidden !== true) {
-          focusTarget = featuredModalPrev;
-        }
+        const focusTarget = featuredModalPanel || featuredModalTitle;
         if (focusTarget && typeof focusTarget.focus === "function") {
           focusTarget.focus({ preventScroll: true });
         }

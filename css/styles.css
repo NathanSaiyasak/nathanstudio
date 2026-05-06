@@ -965,6 +965,11 @@ img {
   color: var(--ink);
 }
 
+/* Programmatic open focus lands on panel (tabindex=-1); hide UA ring on non-button dialog container */
+.featured-modal__panel:focus {
+  outline: none;
+}
+
 /*
  * Desktop: two-column layout uses CSS Grid on .featured-modal__scroll (carousel + body
  * are direct children — not .featured-modal__panel). Safari still collapses the carousel
