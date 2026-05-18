@@ -245,6 +245,20 @@
         "assets/img/featured-img/img-15-5.webp",
       ],
     },
+    {
+      title: "Zera Brochure",
+      description:
+        "A brochure design for Zera that communicates wellness, natural ingredients, and brand trust through a clean editorial layout, soft botanical visuals, and a calm semi-premium design direction.",
+      tags: ["Brand Identity", "Brochure Design", "Graphic Design"],
+      images: ["assets/img/featured-img/img-16-1.webp", "assets/img/featured-img/img-16-2.webp"],
+    },
+    {
+      title: "Poster Design for Youth Camp",
+      description:
+        "A high-visibility poster design created for a youth camp campaign, using strong hierarchy, energetic composition, and clear event information to make the promotion easy to notice and understand.",
+      tags: ["Graphic Design"],
+      images: ["assets/img/featured-img/img-17-1.webp"],
+    },
   ];
   const featuredWorkCards = Array.from(document.querySelectorAll(".featured-work-card[data-project-index]"));
   const featuredWorkFilters = document.querySelector("[data-featured-filters]");
