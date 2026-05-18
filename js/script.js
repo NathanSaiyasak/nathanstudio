@@ -122,7 +122,7 @@
       title: "Zeragrains",
       description:
         "A brand rooted in heritage, sustainability, and authenticity. This packaging design for Thai Jasmine Rice reflects the elegance of Thai culture while maintaining functionality and clear communication. A harmonious blend of tradition and modern branding.",
-      tags: ["Packaging Design", "Brand Identity", "Logo Design", "3D Visualization"],
+      tags: ["Packaging Design", "Brand Identity", "Logo Design", "3D Visualization", "UX/UI Design"],
       images: [
         "assets/img/featured-img/img-1-1.webp",
         "assets/img/featured-img/img-1-2.webp",
@@ -134,7 +134,7 @@
       title: "CQUARE Website",
       description:
         "'CQUARE' is more than a brand; it's your gateway to effortless fashion. The mission? To bring you closer to your wardrobe dreams with just a click. I believe in the power of choice, the elegance of simplicity, and the accessibility of fashion for everyone. From the minimalistic design of the logo to the seamless experience of the website, every thread we weave is crafted with your convenience in mind.",
-      tags: ["Web/App Design", "Logo Design", "Brand Identity"],
+      tags: ["UX/UI Design", "Logo Design", "Brand Identity"],
       images: [
         "assets/img/featured-img/img-2-1.webp",
         "assets/img/featured-img/img-2-2.webp",
@@ -169,7 +169,7 @@
       title: "LINE OA Experience",
       description:
         "A modular rich menu system designed to guide users through eco-friendly travel choices with clarity, structure, and intuitive interaction.",
-      tags: ["Web/App Design"],
+      tags: ["UX/UI Design"],
       images: ["assets/img/featured-img/img-6-1.webp", "assets/img/featured-img/img-6-2.webp"],
     },
     {
@@ -229,14 +229,14 @@
       title: "Corporate Website",
       description:
         "A corporate website redesign focused on strengthening brand credibility and showcasing global manufacturing experience and export capability.",
-      tags: ["Web/App Design", "Brand Identity"],
+      tags: ["UX/UI Design", "Brand Identity"],
       images: ["assets/img/featured-img/img-14-1.webp", "assets/img/featured-img/img-14-2.webp"],
     },
     {
       title: "Food Decision App",
       description:
         "A mobile UI concept designed to simplify food decision-making by guiding users through choices in an intuitive and engaging way.",
-      tags: ["Web/App Design", "Brand Identity", "Logo Design"],
+      tags: ["UX/UI Design", "Brand Identity", "Logo Design"],
       images: [
         "assets/img/featured-img/img-15-1.webp",
         "assets/img/featured-img/img-15-2.webp",
@@ -250,14 +250,18 @@
       description:
         "A brochure design for Zera that communicates wellness, natural ingredients, and brand trust through a clean editorial layout, soft botanical visuals, and a calm semi-premium design direction.",
       tags: ["Brand Identity", "Brochure Design", "Graphic Design"],
-      images: ["assets/img/featured-img/img-16-1.webp", "assets/img/featured-img/img-16-2.webp"],
+      images: [
+        "assets/img/featured-img/img-16.webp",
+        "assets/img/featured-img/img-16-1.webp",
+        "assets/img/featured-img/img-16-2.webp",
+      ],
     },
     {
       title: "Poster Design for Youth Camp",
       description:
         "A high-visibility poster design created for a youth camp campaign, using strong hierarchy, energetic composition, and clear event information to make the promotion easy to notice and understand.",
       tags: ["Graphic Design"],
-      images: ["assets/img/featured-img/img-17-1.webp"],
+      images: ["assets/img/featured-img/img-17.webp", "assets/img/featured-img/img-17-1.webp"],
     },
   ];
   const featuredWorkCards = Array.from(document.querySelectorAll(".featured-work-card[data-project-index]"));
@@ -275,7 +279,7 @@
       "Logo Design",
       "Brochure Design",
       "3D Visualization",
-      "Web/App Design",
+      "UX/UI Design",
       "Graphic Design",
     ];
 
