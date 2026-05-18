@@ -254,7 +254,7 @@
       return;
     }
 
-    const selectedTags = new Set();
+    let selectedTag = null;
     const uniqueTags = [
       "Brand Identity",
       "Packaging Design",
@@ -266,13 +266,11 @@
     ];
 
     function matchesSelectedTags(projectTags) {
-      if (selectedTags.size === 0) {
+      if (selectedTag === null) {
         return true;
       }
 
-      return projectTags.some(function (tag) {
-        return selectedTags.has(tag);
-      });
+      return projectTags.includes(selectedTag);
     }
 
     function updateFeaturedWorkVisibility() {
@@ -291,16 +289,16 @@
 
       uniqueTags.forEach(function (tag) {
         const button = document.createElement("button");
-        const isActive = selectedTags.has(tag);
+        const isActive = selectedTag === tag;
         button.type = "button";
         button.className = "featured-work-filter" + (isActive ? " is-active" : "");
         button.textContent = tag;
-        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+        button.setAttribute("aria-pressed", String(isActive));
         button.addEventListener("click", function () {
-          if (selectedTags.has(tag)) {
-            selectedTags.delete(tag);
+          if (selectedTag === tag) {
+            selectedTag = null;
           } else {
-            selectedTags.add(tag);
+            selectedTag = tag;
           }
           renderFilterButtons();
           updateFeaturedWorkVisibility();
@@ -685,4 +683,70 @@
       }
     });
   });
+
+  function initializeRateCardCurrencyToggle() {
+    const toggle = document.querySelector("[data-rate-currency-toggle]");
+    if (!toggle || !document.body.classList.contains("rate-card-page")) {
+      return;
+    }
+
+    const priceBadges = document.querySelectorAll(".rate-card-page .rate-card-package__price[data-price-usd]");
+    if (!priceBadges.length) {
+      return;
+    }
+
+    const buttons = toggle.querySelectorAll(".rate-card-currency-toggle__button");
+    const USD_TO_THB = 32.86;
+
+    function parseUsdAmount(usdDisplay) {
+      return parseFloat(String(usdDisplay).replace(/[^0-9.]/g, ""), 10);
+    }
+
+    function formatThbFromUsd(usdAmount) {
+      const converted = usdAmount * USD_TO_THB;
+      const rounded = Math.round(converted / 100) * 100;
+      return "฿" + rounded.toLocaleString("en-US");
+    }
+
+    function setCurrency(currency) {
+      buttons.forEach(function (button) {
+        const isActive = button.getAttribute("data-currency") === currency;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+
+      priceBadges.forEach(function (badge) {
+        const usdDisplay = badge.getAttribute("data-price-usd");
+        if (!usdDisplay) {
+          return;
+        }
+
+        if (currency === "thb") {
+          const usdAmount = parseUsdAmount(usdDisplay);
+          if (!Number.isFinite(usdAmount)) {
+            return;
+          }
+          const thbDisplay = formatThbFromUsd(usdAmount);
+          badge.textContent = thbDisplay;
+          badge.setAttribute("aria-label", "Price " + thbDisplay);
+          return;
+        }
+
+        badge.textContent = usdDisplay;
+        badge.setAttribute("aria-label", "Price " + usdDisplay);
+      });
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const currency = button.getAttribute("data-currency");
+        if (!currency) {
+          return;
+        }
+        setCurrency(currency);
+      });
+    });
+  }
+
+  initializeRateCardCurrencyToggle();
 })();

@@ -2119,6 +2119,75 @@ body.featured-modal-open {
   background: transparent;
 }
 
+.rate-card-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 2rem;
+}
+
+.rate-card-section__header .rate-card-section__label {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rate-card-currency-toggle {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  gap: 0.25rem;
+  padding: 0.35rem;
+  background: #fafafa;
+  border: 1px solid rgb(45 45 45 / 8%);
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 6%);
+}
+
+.rate-card-currency-toggle__button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #2d2d2d;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  font-family: var(--font-main);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.rate-card-currency-toggle__button:hover:not(.is-active) {
+  background: rgb(45 45 45 / 6%);
+}
+
+.rate-card-currency-toggle__button:focus {
+  outline: none;
+}
+
+.rate-card-currency-toggle__button:focus-visible {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 2px;
+}
+
+.rate-card-currency-toggle__button.is-active {
+  background: #111;
+  color: #fff;
+}
+
+.rate-card-currency-toggle__button.is-active:hover {
+  background: #000;
+  color: #fff;
+}
+
 .rate-card-sections > .rate-card-section .rate-card-section__label::before {
   display: inline-block;
   margin-right: 0.4rem;

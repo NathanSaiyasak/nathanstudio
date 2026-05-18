@@ -45,10 +45,35 @@
       <div class="rate-card-sections">
           <section class="rate-card-section" aria-labelledby="rate-section-brand">
         <div class="container">
-            <h2 id="rate-section-brand" class="rate-card-section__label">Brand Identity</h2>
+            <div class="rate-card-section__header">
+              <h2 id="rate-section-brand" class="rate-card-section__label">Brand Identity</h2>
+              <div
+                class="rate-card-currency-toggle"
+                role="group"
+                aria-label="Currency"
+                data-rate-currency-toggle
+              >
+                <button
+                  type="button"
+                  class="rate-card-currency-toggle__button is-active"
+                  data-currency="usd"
+                  aria-pressed="true"
+                >
+                  USD
+                </button>
+                <button
+                  type="button"
+                  class="rate-card-currency-toggle__button"
+                  data-currency="thb"
+                  aria-pressed="false"
+                >
+                  THB
+                </button>
+              </div>
+            </div>
             <div class="rate-card-grid">
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$700</span>
+                <span class="rate-card-package__price" data-price-usd="$700" aria-label="Price $700">$700</span>
                 <h3 class="rate-card-package__title">Brand Foundation</h3>
                 <p class="rate-card-package__description">Best for small businesses getting started</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -78,7 +103,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$1,300</span>
+                <span class="rate-card-package__price" data-price-usd="$1,300" aria-label="Price $1,300">$1,300</span>
                 <h3 class="rate-card-package__title">Brand System</h3>
                 <p class="rate-card-package__description">Best for businesses that want a consistent look</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -106,7 +131,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$2,500</span>
+                <span class="rate-card-package__price" data-price-usd="$2,500" aria-label="Price $2,500">$2,500</span>
                 <h3 class="rate-card-package__title">Full Brand Experience</h3>
                 <p class="rate-card-package__description">Best for businesses building a strong brand</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -138,7 +163,7 @@
             <h2 id="rate-section-packaging" class="rate-card-section__label">Packaging Design</h2>
             <div class="rate-card-grid">
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$500</span>
+                <span class="rate-card-package__price" data-price-usd="$500" aria-label="Price $500">$500</span>
                 <h3 class="rate-card-package__title">Single Product Packaging</h3>
                 <p class="rate-card-package__description">For 1 product</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -157,7 +182,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$1,600</span>
+                <span class="rate-card-package__price" data-price-usd="$1,600" aria-label="Price $1,600">$1,600</span>
                 <h3 class="rate-card-package__title">Product Line Packaging</h3>
                 <p class="rate-card-package__description">For multiple products</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -174,7 +199,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$2,500</span>
+                <span class="rate-card-package__price" data-price-usd="$2,500" aria-label="Price $2,500">$2,500</span>
                 <h3 class="rate-card-package__title">Brand + Packaging</h3>
                 <p class="rate-card-package__description">For new product launches</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -202,7 +227,7 @@
             <h2 id="rate-section-web" class="rate-card-section__label">Website &amp; Product Design</h2>
             <div class="rate-card-grid">
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$900</span>
+                <span class="rate-card-package__price" data-price-usd="$900" aria-label="Price $900">$900</span>
                 <h3 class="rate-card-package__title">Simple Website</h3>
                 <p class="rate-card-package__description">For simple business websites</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -225,7 +250,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$2,300</span>
+                <span class="rate-card-package__price" data-price-usd="$2,300" aria-label="Price $2,300">$2,300</span>
                 <h3 class="rate-card-package__title">Business Website</h3>
                 <p class="rate-card-package__description">For multiple page websites</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -243,7 +268,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$1,200</span>
+                <span class="rate-card-package__price" data-price-usd="$1,200" aria-label="Price $1,200">$1,200</span>
                 <h3 class="rate-card-package__title">App / UX Concept</h3>
                 <p class="rate-card-package__description">For new product launches</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -270,7 +295,7 @@
             <h2 id="rate-section-support" class="rate-card-section__label">Design Support</h2>
             <div class="rate-card-grid">
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$80</span>
+                <span class="rate-card-package__price" data-price-usd="$80" aria-label="Price $80">$80</span>
                 <h3 class="rate-card-package__title">Poster/Campaign Visual</h3>
                 <p class="rate-card-package__description">For marketing or campaigns</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -286,7 +311,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$160</span>
+                <span class="rate-card-package__price" data-price-usd="$160" aria-label="Price $160">$160</span>
                 <h3 class="rate-card-package__title">Brochure</h3>
                 <p class="rate-card-package__description">For company or product information</p>
                 <p class="rate-card-package__you-get">You will get:</p>
@@ -308,7 +333,7 @@
               </article>
 
               <article class="rate-card-package">
-                <span class="rate-card-package__price" aria-label="Price">$65</span>
+                <span class="rate-card-package__price" data-price-usd="$65" aria-label="Price $65">$65</span>
                 <h3 class="rate-card-package__title">Social Media Visual</h3>
                 <p class="rate-card-package__description">For ongoing content</p>
                 <p class="rate-card-package__you-get">You will get:</p>
