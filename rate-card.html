@@ -4,25 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rate Card | Nathan Sai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/i18n-data.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
   <body class="rate-card-page">
     <header class="site-header">
-      <a class="logo-link" href="index.html" aria-label="Home">
+      <a class="logo-link" href="index.html" aria-label="Home" data-i18n-aria="nav.home">
         <img src="assets/img/logo-nav.svg" alt="Nathan Sai logo" />
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+      <button class="menu-toggle" aria-label="Toggle navigation" data-i18n-aria="nav.toggle" aria-expanded="false" aria-controls="site-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <nav class="site-nav" id="site-nav">
-        <a href="index.html#projects">Projects</a>
-        <a href="index.html#about">About</a>
-        <a href="rate-card.html">Rate Card</a>
+        <a href="index.html#projects" data-i18n="nav.projects">Projects</a>
+        <a href="index.html#about" data-i18n="nav.about">About</a>
+        <a href="rate-card.html" data-i18n="nav.rateCard">Rate Card</a>
+        <div class="site-lang-toggle" role="group" data-lang-toggle data-i18n-aria="nav.lang" aria-label="Language">
+          <button type="button" class="site-lang-toggle__button is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="site-lang-toggle__button" data-lang="th" aria-pressed="false">TH</button>
+        </div>
       </nav>
     </header>
 
@@ -34,9 +45,9 @@
             <span class="specialization-heading__handle specialization-heading__handle--tr" aria-hidden="true"></span>
             <span class="specialization-heading__handle specialization-heading__handle--bl" aria-hidden="true"></span>
             <span class="specialization-heading__handle specialization-heading__handle--br" aria-hidden="true"></span>
-            <span class="specialization-heading__selected-text">Rate Card</span>
+            <span class="specialization-heading__selected-text" data-i18n="rateCard.hero.title">Rate Card</span>
           </h1>
-          <p class="rate-card-hero__lede">
+          <p class="rate-card-hero__lede" data-i18n="rateCard.hero.lede">
             Design services for brands, products, websites, and marketing materials.
           </p>
         </div>
@@ -46,10 +57,11 @@
           <section class="rate-card-section" aria-labelledby="rate-section-brand">
         <div class="container">
             <div class="rate-card-section__header">
-              <h2 id="rate-section-brand" class="rate-card-section__label">Brand Identity</h2>
+              <h2 id="rate-section-brand" class="rate-card-section__label" data-i18n="rateCard.sections.brand">Brand Identity</h2>
               <div
                 class="rate-card-currency-toggle"
                 role="group"
+                data-i18n-aria="rateCard.currencyAria"
                 aria-label="Currency"
                 data-rate-currency-toggle
               >
@@ -74,84 +86,84 @@
             <div class="rate-card-grid">
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$700" aria-label="Price $700">$700</span>
-                <h3 class="rate-card-package__title">Brand Foundation</h3>
-                <p class="rate-card-package__description">Best for small businesses getting started</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.brand1.title">Brand Foundation</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.brand1.desc">Best for small businesses getting started</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>1 logo design</strong>
-                    <span>2 options to choose from</span>
+                    <strong data-i18n="rateCard.brand1.li1s">1 logo design</strong>
+                    <span data-i18n="rateCard.brand1.li1n">2 options to choose from</span>
                   </li>
                   <li>
-                    <strong>Color palette</strong>
-                    <span>primary + secondary colors</span>
+                    <strong data-i18n="rateCard.brand1.li2s">Color palette</strong>
+                    <span data-i18n="rateCard.brand1.li2n">primary + secondary colors</span>
                   </li>
                   <li>
-                    <strong>Font pair</strong>
-                    <span>for titles and body text</span>
+                    <strong data-i18n="rateCard.brand1.li3s">Font pair</strong>
+                    <span data-i18n="rateCard.brand1.li3n">for titles and body text</span>
                   </li>
                   <li>
-                    <strong>Logo files</strong>
-                    <span>PNG, JPG, SVG</span>
+                    <strong data-i18n="rateCard.brand1.li4s">Logo files</strong>
+                    <span data-i18n="rateCard.brand1.li4n">PNG, JPG, SVG</span>
                   </li>
                   <li>
-                    <strong>Simple brand guide</strong>
-                    <span>PDF</span>
+                    <strong data-i18n="rateCard.brand1.li5s">Simple brand guide</strong>
+                    <span data-i18n="rateCard.brand1.li5n">PDF</span>
                   </li>
-                  <li><strong>2 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.brand1.li6s">2 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$1,300" aria-label="Price $1,300">$1,300</span>
-                <h3 class="rate-card-package__title">Brand System</h3>
-                <p class="rate-card-package__description">Best for businesses that want a consistent look</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.brand2.title">Brand System</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.brand2.desc">Best for businesses that want a consistent look</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>1 final logo</strong>
-                    <span>from 3 design options</span>
+                    <strong data-i18n="rateCard.brand2.li1s">1 final logo</strong>
+                    <span data-i18n="rateCard.brand2.li1n">from 3 design options</span>
                   </li>
-                  <li><strong>Color palette + font system</strong></li>
+                  <li><strong data-i18n="rateCard.brand2.li2s">Color palette + font system</strong></li>
                   <li>
-                    <strong>Logo variations</strong>
-                    <span>horizontal, icon, etc.</span>
+                    <strong data-i18n="rateCard.brand2.li3s">Logo variations</strong>
+                    <span data-i18n="rateCard.brand2.li3n">horizontal, icon, etc.</span>
                   </li>
-                  <li><strong>Social media preview mockups</strong></li>
+                  <li><strong data-i18n="rateCard.brand2.li4s">Social media preview mockups</strong></li>
                   <li>
-                    <strong>Basic brand guideline</strong>
-                    <span>PDF</span>
+                    <strong data-i18n="rateCard.brand2.li5s">Basic brand guideline</strong>
+                    <span data-i18n="rateCard.brand2.li5n">PDF</span>
                   </li>
                   <li>
-                    <strong>Logo files</strong>
-                    <span>PNG, JPG, SVG</span>
+                    <strong data-i18n="rateCard.brand2.li6s">Logo files</strong>
+                    <span data-i18n="rateCard.brand2.li6n">PNG, JPG, SVG</span>
                   </li>
-                  <li><strong>3–5 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.brand2.li7s">3–5 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$2,500" aria-label="Price $2,500">$2,500</span>
-                <h3 class="rate-card-package__title">Full Brand Experience</h3>
-                <p class="rate-card-package__description">Best for businesses building a strong brand</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.brand3.title">Full Brand Experience</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.brand3.desc">Best for businesses building a strong brand</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
-                  <li><strong>1 final logo + logo variations</strong></li>
-                  <li><strong>Full color + font system</strong></li>
+                  <li><strong data-i18n="rateCard.brand3.li1s">1 final logo + logo variations</strong></li>
+                  <li><strong data-i18n="rateCard.brand3.li2s">Full color + font system</strong></li>
                   <li>
-                    <strong>Brand guideline document</strong>
-                    <span>detailed PDF</span>
+                    <strong data-i18n="rateCard.brand3.li3s">Brand guideline document</strong>
+                    <span data-i18n="rateCard.brand3.li3n">detailed PDF</span>
                   </li>
                   <li>
-                    <strong>Sample applications</strong>
-                    <span>packaging, website, social media</span>
+                    <strong data-i18n="rateCard.brand3.li4s">Sample applications</strong>
+                    <span data-i18n="rateCard.brand3.li4n">packaging, website, social media</span>
                   </li>
-                  <li><strong>Presentation mockups</strong></li>
+                  <li><strong data-i18n="rateCard.brand3.li5s">Presentation mockups</strong></li>
                   <li>
-                    <strong>Logo and asset files</strong>
-                    <span>PNG, JPG, SVG, source files</span>
+                    <strong data-i18n="rateCard.brand3.li6s">Logo and asset files</strong>
+                    <span data-i18n="rateCard.brand3.li6n">PNG, JPG, SVG, source files</span>
                   </li>
-                  <li><strong>5+ rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.brand3.li7s">5+ rounds of revisions</strong></li>
                 </ul>
               </article>
             </div>
@@ -160,62 +172,62 @@
 
           <section class="rate-card-section" aria-labelledby="rate-section-packaging">
         <div class="container">
-            <h2 id="rate-section-packaging" class="rate-card-section__label">Packaging Design</h2>
+            <h2 id="rate-section-packaging" class="rate-card-section__label" data-i18n="rateCard.sections.packaging">Packaging Design</h2>
             <div class="rate-card-grid">
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$500" aria-label="Price $500">$500</span>
-                <h3 class="rate-card-package__title">Single Product Packaging</h3>
-                <p class="rate-card-package__description">For 1 product</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.pack1.title">Single Product Packaging</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.pack1.desc">For 1 product</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>Packaging design</strong>
-                    <span>for 1 product</span>
+                    <strong data-i18n="rateCard.pack1.li1s">Packaging design</strong>
+                    <span data-i18n="rateCard.pack1.li1n">for 1 product</span>
                   </li>
                   <li>
-                    <strong>Print-ready file</strong>
-                    <span>AI / PDF</span>
+                    <strong data-i18n="rateCard.pack1.li2s">Print-ready file</strong>
+                    <span data-i18n="rateCard.pack1.li2n">AI / PDF</span>
                   </li>
-                  <li><strong>3D mockup images</strong></li>
-                  <li><strong>2–3 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.pack1.li3s">3D mockup images</strong></li>
+                  <li><strong data-i18n="rateCard.pack1.li4s">2–3 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$1,600" aria-label="Price $1,600">$1,600</span>
-                <h3 class="rate-card-package__title">Product Line Packaging</h3>
-                <p class="rate-card-package__description">For multiple products</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.pack2.title">Product Line Packaging</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.pack2.desc">For multiple products</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>Packaging design system</strong>
-                    <span>for multiple SKUs</span>
+                    <strong data-i18n="rateCard.pack2.li1s">Packaging design system</strong>
+                    <span data-i18n="rateCard.pack2.li1n">for multiple SKUs</span>
                   </li>
-                  <li><strong>Design applied across all product</strong></li>
-                  <li><strong>Print-ready files</strong></li>
-                  <li><strong>3D mockups</strong></li>
-                  <li><strong>3–5 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.pack2.li2s">Design applied across all product</strong></li>
+                  <li><strong data-i18n="rateCard.pack2.li3s">Print-ready files</strong></li>
+                  <li><strong data-i18n="rateCard.pack2.li4s">3D mockups</strong></li>
+                  <li><strong data-i18n="rateCard.pack2.li5s">3–5 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$2,500" aria-label="Price $2,500">$2,500</span>
-                <h3 class="rate-card-package__title">Brand + Packaging</h3>
-                <p class="rate-card-package__description">For new product launches</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.pack3.title">Brand + Packaging</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.pack3.desc">For new product launches</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>Brand identity</strong>
-                    <span>logo, colors, fonts</span>
+                    <strong data-i18n="rateCard.pack3.li1s">Brand identity</strong>
+                    <span data-i18n="rateCard.pack3.li1n">logo, colors, fonts</span>
                   </li>
-                  <li><strong>Packaging design for product line</strong></li>
-                  <li><strong>Print-ready files</strong></li>
-                  <li><strong>3D mockups and presentation visuals</strong></li>
+                  <li><strong data-i18n="rateCard.pack3.li2s">Packaging design for product line</strong></li>
+                  <li><strong data-i18n="rateCard.pack3.li3s">Print-ready files</strong></li>
+                  <li><strong data-i18n="rateCard.pack3.li4s">3D mockups and presentation visuals</strong></li>
                   <li>
-                    <strong>Brand guideline</strong>
-                    <span>PDF</span>
+                    <strong data-i18n="rateCard.pack3.li5s">Brand guideline</strong>
+                    <span data-i18n="rateCard.pack3.li5n">PDF</span>
                   </li>
-                  <li><strong>5+ rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.pack3.li6s">5+ rounds of revisions</strong></li>
                 </ul>
               </article>
             </div>
@@ -224,66 +236,66 @@
 
           <section class="rate-card-section" aria-labelledby="rate-section-web">
         <div class="container">
-            <h2 id="rate-section-web" class="rate-card-section__label">Website &amp; Product Design</h2>
+            <h2 id="rate-section-web" class="rate-card-section__label" data-i18n="rateCard.sections.web">Website &amp; Product Design</h2>
             <div class="rate-card-grid">
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$900" aria-label="Price $900">$900</span>
-                <h3 class="rate-card-package__title">Simple Website</h3>
-                <p class="rate-card-package__description">For simple business websites</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.web1.title">Simple Website</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.web1.desc">For simple business websites</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>Custom design</strong>
-                    <span>not template-based look</span>
+                    <strong data-i18n="rateCard.web1.li1s">Custom design</strong>
+                    <span data-i18n="rateCard.web1.li1n">not template-based look</span>
                   </li>
                   <li>
-                    <strong>Fully built website</strong>
-                    <span>ready to launch</span>
+                    <strong data-i18n="rateCard.web1.li2s">Fully built website</strong>
+                    <span data-i18n="rateCard.web1.li2n">ready to launch</span>
                   </li>
                   <li>
-                    <strong>Basic animations</strong>
-                    <span>scroll, hover</span>
+                    <strong data-i18n="rateCard.web1.li3s">Basic animations</strong>
+                    <span data-i18n="rateCard.web1.li3n">scroll, hover</span>
                   </li>
-                  <li><strong>Mobile responsive</strong></li>
-                  <li><strong>2–3 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.web1.li4s">Mobile responsive</strong></li>
+                  <li><strong data-i18n="rateCard.web1.li5s">2–3 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$2,300" aria-label="Price $2,300">$2,300</span>
-                <h3 class="rate-card-package__title">Business Website</h3>
-                <p class="rate-card-package__description">For multiple page websites</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.web2.title">Business Website</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.web2.desc">For multiple page websites</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>3–5 page website</strong>
-                    <span>Home, About, Services, etc.</span>
+                    <strong data-i18n="rateCard.web2.li1s">3–5 page website</strong>
+                    <span data-i18n="rateCard.web2.li1n">Home, About, Services, etc.</span>
                   </li>
-                  <li><strong>Custom design + full build</strong></li>
-                  <li><strong>Mobile responsive design</strong></li>
-                  <li><strong>Basic animations and interactions</strong></li>
-                  <li><strong>Ready-to-launch website</strong></li>
-                  <li><strong>3–5 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.web2.li2s">Custom design + full build</strong></li>
+                  <li><strong data-i18n="rateCard.web2.li3s">Mobile responsive design</strong></li>
+                  <li><strong data-i18n="rateCard.web2.li4s">Basic animations and interactions</strong></li>
+                  <li><strong data-i18n="rateCard.web2.li5s">Ready-to-launch website</strong></li>
+                  <li><strong data-i18n="rateCard.web2.li6s">3–5 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$1,200" aria-label="Price $1,200">$1,200</span>
-                <h3 class="rate-card-package__title">App / UX Concept</h3>
-                <p class="rate-card-package__description">For new product launches</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.web3.title">App / UX Concept</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.web3.desc">For new product launches</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>Screen designs</strong>
-                    <span>main app screens</span>
+                    <strong data-i18n="rateCard.web3.li1s">Screen designs</strong>
+                    <span data-i18n="rateCard.web3.li1n">main app screens</span>
                   </li>
-                  <li><strong>Basic user flow diagram</strong></li>
+                  <li><strong data-i18n="rateCard.web3.li2s">Basic user flow diagram</strong></li>
                   <li>
-                    <strong>Clickable prototype</strong>
-                    <span>Figma</span>
+                    <strong data-i18n="rateCard.web3.li3s">Clickable prototype</strong>
+                    <span data-i18n="rateCard.web3.li3n">Figma</span>
                   </li>
-                  <li><strong>UI component system</strong></li>
-                  <li><strong>3–5 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.web3.li4s">UI component system</strong></li>
+                  <li><strong data-i18n="rateCard.web3.li5s">3–5 rounds of revisions</strong></li>
                 </ul>
               </article>
             </div>
@@ -292,59 +304,59 @@
 
           <section class="rate-card-section" aria-labelledby="rate-section-support">
         <div class="container">
-            <h2 id="rate-section-support" class="rate-card-section__label">Design Support</h2>
+            <h2 id="rate-section-support" class="rate-card-section__label" data-i18n="rateCard.sections.support">Design Support</h2>
             <div class="rate-card-grid">
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$80" aria-label="Price $80">$80</span>
-                <h3 class="rate-card-package__title">Poster/Campaign Visual</h3>
-                <p class="rate-card-package__description">For marketing or campaigns</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.sup1.title">Poster/Campaign Visual</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.sup1.desc">For marketing or campaigns</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
-                  <li><strong>1 design</strong></li>
+                  <li><strong data-i18n="rateCard.sup1.li1s">1 design</strong></li>
                   <li>
-                    <strong>1 size</strong>
-                    <span>or adapted size if needed</span>
+                    <strong data-i18n="rateCard.sup1.li2s">1 size</strong>
+                    <span data-i18n="rateCard.sup1.li2n">or adapted size if needed</span>
                   </li>
-                  <li><strong>Print or digital-ready file</strong></li>
-                  <li><strong>2 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.sup1.li3s">Print or digital-ready file</strong></li>
+                  <li><strong data-i18n="rateCard.sup1.li4s">2 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$160" aria-label="Price $160">$160</span>
-                <h3 class="rate-card-package__title">Brochure</h3>
-                <p class="rate-card-package__description">For company or product information</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.sup2.title">Brochure</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.sup2.desc">For company or product information</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
                   <li>
-                    <strong>Layout design</strong>
-                    <span>2–8 pages</span>
+                    <strong data-i18n="rateCard.sup2.li1s">Layout design</strong>
+                    <span data-i18n="rateCard.sup2.li1n">2–8 pages</span>
                   </li>
                   <li>
-                    <strong>Print-ready file</strong>
-                    <span>PDF</span>
+                    <strong data-i18n="rateCard.sup2.li2s">Print-ready file</strong>
+                    <span data-i18n="rateCard.sup2.li2n">PDF</span>
                   </li>
                   <li>
-                    <strong>Source file</strong>
-                    <span>AI / Figma</span>
+                    <strong data-i18n="rateCard.sup2.li3s">Source file</strong>
+                    <span data-i18n="rateCard.sup2.li3n">AI / Figma</span>
                   </li>
-                  <li><strong>2–3 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.sup2.li4s">2–3 rounds of revisions</strong></li>
                 </ul>
               </article>
 
               <article class="rate-card-package">
                 <span class="rate-card-package__price" data-price-usd="$65" aria-label="Price $65">$65</span>
-                <h3 class="rate-card-package__title">Social Media Visual</h3>
-                <p class="rate-card-package__description">For ongoing content</p>
-                <p class="rate-card-package__you-get">You will get:</p>
+                <h3 class="rate-card-package__title" data-i18n="rateCard.sup3.title">Social Media Visual</h3>
+                <p class="rate-card-package__description" data-i18n="rateCard.sup3.desc">For ongoing content</p>
+                <p class="rate-card-package__you-get" data-i18n="rateCard.youGet">You will get:</p>
                 <ul class="rate-card-package__list">
-                  <li><strong>1 design per post</strong></li>
+                  <li><strong data-i18n="rateCard.sup3.li1s">1 design per post</strong></li>
                   <li>
-                    <strong>1 size</strong>
-                    <span>or platform-specific size</span>
+                    <strong data-i18n="rateCard.sup3.li2s">1 size</strong>
+                    <span data-i18n="rateCard.sup3.li2n">or platform-specific size</span>
                   </li>
-                  <li><strong>Exported image files</strong></li>
-                  <li><strong>1–2 rounds of revisions</strong></li>
+                  <li><strong data-i18n="rateCard.sup3.li3s">Exported image files</strong></li>
+                  <li><strong data-i18n="rateCard.sup3.li4s">1–2 rounds of revisions</strong></li>
                 </ul>
               </article>
             </div>
@@ -354,8 +366,8 @@
     </main>
 
     <footer class="site-footer" id="contact">
-      <p class="footer-left">Designed &amp; Developed<br />by Nathan Sai</p>
-      <p class="footer-right">&copy; 2026<br />All Rights Reserved</p>
+      <p class="footer-left" data-i18n-html="footer.left">Designed &amp; Developed<br />by Nathan Sai</p>
+      <p class="footer-right" data-i18n-html="footer.right">&copy; 2026<br />All Rights Reserved</p>
     </footer>
   </body>
 </html>

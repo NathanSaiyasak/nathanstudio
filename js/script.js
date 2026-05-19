@@ -1,4 +1,192 @@
 (function () {
+  var LANG_STORAGE_KEY = "portfolio-lang";
+  var currentLang = "en";
+  var refreshFeaturedFilters = null;
+  var refreshOpenFeaturedModal = null;
+  var activeFeaturedProjectIndex = null;
+
+  function getStoredLang() {
+    try {
+      var stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored === "en" || stored === "th") {
+        return stored;
+      }
+    } catch (error) {
+      /* ignore */
+    }
+    return "en";
+  }
+
+  function t(path, vars) {
+    var strings = typeof SITE_STRINGS !== "undefined" ? SITE_STRINGS[currentLang] : null;
+    if (!strings && typeof SITE_STRINGS !== "undefined") {
+      strings = SITE_STRINGS.en;
+    }
+    if (!strings) {
+      return "";
+    }
+
+    var parts = String(path).split(".");
+    var value = strings;
+    for (var i = 0; i < parts.length; i += 1) {
+      if (value == null) {
+        value = undefined;
+        break;
+      }
+      value = value[parts[i]];
+    }
+
+    if (typeof value !== "string") {
+      return "";
+    }
+
+    if (!vars) {
+      return value;
+    }
+
+    return Object.keys(vars).reduce(function (result, key) {
+      return result.replace(new RegExp("\\{" + key + "\\}", "g"), vars[key]);
+    }, value);
+  }
+
+  function getTagLabel(tag) {
+    if (typeof SITE_TAG_LABELS === "undefined" || !SITE_TAG_LABELS[tag]) {
+      return tag;
+    }
+    var labels = SITE_TAG_LABELS[tag];
+    return labels[currentLang] || labels.en || tag;
+  }
+
+  function getProjectDescription(project, projectIndex) {
+    if (
+      currentLang === "th" &&
+      typeof PROJECT_DESCRIPTIONS_TH !== "undefined" &&
+      PROJECT_DESCRIPTIONS_TH[projectIndex]
+    ) {
+      return PROJECT_DESCRIPTIONS_TH[projectIndex];
+    }
+    return project.description;
+  }
+
+  function applyI18n() {
+    document.documentElement.lang = currentLang === "th" ? "th" : "en";
+    document.documentElement.dataset.lang = currentLang;
+
+    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+      var key = element.getAttribute("data-i18n");
+      if (key) {
+        element.textContent = t(key);
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach(function (element) {
+      var key = element.getAttribute("data-i18n-html");
+      if (key) {
+        element.innerHTML = t(key);
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (element) {
+      var key = element.getAttribute("data-i18n-aria");
+      if (key) {
+        element.setAttribute("aria-label", t(key));
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-caption]").forEach(function (element) {
+      var index = element.getAttribute("data-i18n-caption");
+      if (index) {
+        element.textContent = t("projects.captions." + index);
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-project-open]").forEach(function (element) {
+      var title = element.getAttribute("data-project-title") || "";
+      element.setAttribute("aria-label", t("projects.open", { title: title }));
+    });
+
+    document.querySelectorAll("[data-i18n-marquee-index]").forEach(function (element) {
+      var index = parseInt(element.getAttribute("data-i18n-marquee-index"), 10);
+      var pills =
+        typeof SITE_STRINGS !== "undefined" && SITE_STRINGS[currentLang]
+          ? SITE_STRINGS[currentLang].marquee.pills
+          : null;
+      if (pills && pills[index] != null) {
+        element.textContent = pills[index];
+      }
+    });
+
+    document.querySelectorAll("[data-i18n-split]").forEach(function (wrapper) {
+      var key = wrapper.getAttribute("data-i18n-split");
+      var full = t(key);
+      var chars = Array.from(full);
+      var first = wrapper.querySelector(".specialization-first-letter");
+      var rest = wrapper.querySelector("[data-i18n-split-rest]");
+      if (first && rest) {
+        first.textContent = chars[0] || "";
+        rest.textContent = chars.slice(1).join("");
+      }
+    });
+
+    var featuredFilters = document.querySelector("[data-featured-filters]");
+    if (featuredFilters) {
+      featuredFilters.setAttribute("aria-label", t("featured.filtersAria"));
+    }
+
+    if (document.body.classList.contains("rate-card-page")) {
+      document.title = t("rateCard.meta.title");
+    } else {
+      document.title = t("meta.title");
+    }
+
+    if (typeof refreshFeaturedFilters === "function") {
+      refreshFeaturedFilters();
+    }
+
+    if (typeof refreshOpenFeaturedModal === "function") {
+      refreshOpenFeaturedModal();
+    }
+  }
+
+  function setLanguage(lang) {
+    if (lang !== "en" && lang !== "th") {
+      return;
+    }
+
+    currentLang = lang;
+
+    try {
+      localStorage.setItem(LANG_STORAGE_KEY, lang);
+    } catch (error) {
+      /* ignore */
+    }
+
+    document.querySelectorAll("[data-lang-toggle] .site-lang-toggle__button").forEach(function (button) {
+      var isActive = button.getAttribute("data-lang") === lang;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    applyI18n();
+  }
+
+  function initializeSiteLanguage() {
+    currentLang = getStoredLang();
+
+    document.querySelectorAll("[data-lang-toggle]").forEach(function (toggle) {
+      toggle.querySelectorAll(".site-lang-toggle__button").forEach(function (button) {
+        button.addEventListener("click", function () {
+          var lang = button.getAttribute("data-lang");
+          if (lang) {
+            setLanguage(lang);
+          }
+        });
+      });
+    });
+
+    setLanguage(currentLang);
+  }
+
   const menuToggle = document.querySelector(".menu-toggle");
   const siteNav = document.querySelector(".site-nav");
   let escapeNavHandler = function () {};
@@ -310,7 +498,7 @@
         const isActive = selectedTag === tag;
         button.type = "button";
         button.className = "featured-work-filter" + (isActive ? " is-active" : "");
-        button.textContent = tag;
+        button.textContent = getTagLabel(tag);
         button.setAttribute("aria-pressed", String(isActive));
         button.addEventListener("click", function () {
           if (selectedTag === tag) {
@@ -324,6 +512,11 @@
         featuredWorkFilters.appendChild(button);
       });
     }
+
+    refreshFeaturedFilters = function () {
+      renderFilterButtons();
+      updateFeaturedWorkVisibility();
+    };
 
     renderFilterButtons();
     updateFeaturedWorkVisibility();
@@ -422,6 +615,7 @@
     featuredModal.setAttribute("hidden", "");
     featuredModal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("featured-modal-open");
+    activeFeaturedProjectIndex = null;
 
     featuredModal.classList.remove("is-single");
     featuredCarouselIndex = 0;
@@ -509,19 +703,30 @@
     }
 
     featuredModalLastFocus = document.activeElement;
+    activeFeaturedProjectIndex = projectIndex;
     featuredModal.removeAttribute("hidden");
     featuredModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("featured-modal-open");
 
     featuredModalTitle.textContent = project.title;
-    featuredModalDescription.textContent = project.description;
+    featuredModalDescription.textContent = getProjectDescription(project, projectIndex - 1);
     featuredModalTags.innerHTML = "";
     project.tags.forEach(function (tag) {
       const li = document.createElement("li");
       li.className = "featured-modal__tag";
-      li.textContent = tag;
+      li.textContent = getTagLabel(tag);
       featuredModalTags.appendChild(li);
     });
+
+    if (featuredModalPrev) {
+      featuredModalPrev.setAttribute("aria-label", t("modal.prev"));
+    }
+    if (featuredModalNext) {
+      featuredModalNext.setAttribute("aria-label", t("modal.next"));
+    }
+    if (featuredModalDots) {
+      featuredModalDots.setAttribute("aria-label", t("modal.carousel"));
+    }
 
     const imageCount = project.images.length;
     featuredCarouselSlideCount = imageCount;
@@ -543,7 +748,7 @@
       const dot = document.createElement("button");
       dot.type = "button";
       dot.className = "featured-modal__dot";
-      dot.setAttribute("aria-label", "Go to image " + (dotIndex + 1));
+      dot.setAttribute("aria-label", t("modal.goToImage") + " " + (dotIndex + 1));
       dot.addEventListener("click", function () {
         scrollFeaturedCarouselTo(dotIndex);
       });
@@ -766,5 +971,41 @@
     });
   }
 
+  function refreshFeaturedModalI18n() {
+    if (!featuredModal || featuredModal.hasAttribute("hidden") || activeFeaturedProjectIndex == null) {
+      return;
+    }
+
+    const project = featuredProjects[activeFeaturedProjectIndex - 1];
+    if (!project || !featuredModalDescription || !featuredModalTags) {
+      return;
+    }
+
+    featuredModalDescription.textContent = getProjectDescription(project, activeFeaturedProjectIndex - 1);
+    featuredModalTags.innerHTML = "";
+    project.tags.forEach(function (tag) {
+      const li = document.createElement("li");
+      li.className = "featured-modal__tag";
+      li.textContent = getTagLabel(tag);
+      featuredModalTags.appendChild(li);
+    });
+
+    if (featuredModalPrev) {
+      featuredModalPrev.setAttribute("aria-label", t("modal.prev"));
+    }
+    if (featuredModalNext) {
+      featuredModalNext.setAttribute("aria-label", t("modal.next"));
+    }
+    if (featuredModalDots) {
+      featuredModalDots.setAttribute("aria-label", t("modal.carousel"));
+      featuredModalDots.querySelectorAll(".featured-modal__dot").forEach(function (dot, dotIndex) {
+        dot.setAttribute("aria-label", t("modal.goToImage") + " " + (dotIndex + 1));
+      });
+    }
+  }
+
+  refreshOpenFeaturedModal = refreshFeaturedModalI18n;
+
   initializeRateCardCurrencyToggle();
+  initializeSiteLanguage();
 })();

@@ -4,25 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nathan Sai | Multidisciplinary Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/i18n-data.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="logo-link" href="index.html" aria-label="Home">
+      <a class="logo-link" href="index.html" aria-label="Home" data-i18n-aria="nav.home">
         <img src="assets/img/logo-nav.svg" alt="Nathan Sai logo" />
       </a>
 
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+      <button class="menu-toggle" aria-label="Toggle navigation" data-i18n-aria="nav.toggle" aria-expanded="false" aria-controls="site-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <nav class="site-nav" id="site-nav">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="rate-card.html">Rate Card</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="rate-card.html" data-i18n="nav.rateCard">Rate Card</a>
+        <div class="site-lang-toggle" role="group" data-lang-toggle data-i18n-aria="nav.lang" aria-label="Language">
+          <button type="button" class="site-lang-toggle__button is-active" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="site-lang-toggle__button" data-lang="th" aria-pressed="false">TH</button>
+        </div>
       </nav>
     </header>
 
@@ -49,35 +60,35 @@
           aria-hidden="true"
         />
         <div class="container intro-content">
-          <h2>Hi 👋, I'm <strong>Nathan Sai.</strong></h2>
-          <p>
+          <h2 data-i18n-html="intro.heading">Hi 👋, I'm <strong>Nathan Sai.</strong></h2>
+          <p data-i18n="intro.body">
             I specialize in UX/UI, web development, graphic design, branding, and product design,
             crafting seamless digital experiences that blend creativity with functionality.
           </p>
         </div>
       </section>
 
-      <section class="tag-strip" aria-label="Core Skills">
+      <section class="tag-strip" data-i18n-aria="marquee.aria" aria-label="Core Skills">
         <div class="marquee-track" data-marquee>
-          <span class="tag-pill">User Research &amp; Design Thinking</span>
-          <span class="tag-pill">Wireframing &amp; Prototyping</span>
-          <span class="tag-pill">UI/UX Design</span>
-          <span class="tag-pill">Graphic Design &amp; Branding</span>
-          <span class="tag-pill">Interaction Design</span>
-          <span class="tag-pill">Web Development</span>
-          <span class="tag-pill">Frontend Systems</span>
+          <span class="tag-pill" data-i18n-marquee-index="0">User Research &amp; Design Thinking</span>
+          <span class="tag-pill" data-i18n-marquee-index="1">Wireframing &amp; Prototyping</span>
+          <span class="tag-pill" data-i18n-marquee-index="2">UI/UX Design</span>
+          <span class="tag-pill" data-i18n-marquee-index="3">Graphic Design &amp; Branding</span>
+          <span class="tag-pill" data-i18n-marquee-index="4">Interaction Design</span>
+          <span class="tag-pill" data-i18n-marquee-index="5">Web Development</span>
+          <span class="tag-pill" data-i18n-marquee-index="6">Frontend Systems</span>
         </div>
       </section>
 
       <section class="specialization-section" aria-labelledby="specialization-heading">
         <div class="container specialization-section__inner">
           <h2 id="specialization-heading" class="specialization-heading">
-            <span class="specialization-heading__my">My</span><span class="specialization-heading__selected">
+              <span class="specialization-heading__my" data-i18n="specialization.my">My</span><span class="specialization-heading__selected">
               <span class="specialization-heading__handle specialization-heading__handle--tl" aria-hidden="true"></span>
               <span class="specialization-heading__handle specialization-heading__handle--tr" aria-hidden="true"></span>
               <span class="specialization-heading__handle specialization-heading__handle--bl" aria-hidden="true"></span>
               <span class="specialization-heading__handle specialization-heading__handle--br" aria-hidden="true"></span>
-              <span class="specialization-heading__selected-text"><span class="specialization-first-letter">S</span>pecialization</span>
+              <span class="specialization-heading__selected-text" data-i18n-split="specialization.specialization"><span class="specialization-first-letter">S</span><span data-i18n-split-rest>pecialization</span></span>
             </span>
           </h2>
 
@@ -86,8 +97,8 @@
               <div class="specialization-card__icon" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M224 112c-8.8 0-16-7.2-16-16l0-16c0-44.2 35.8-80 80-80l16 0c8.8 0 16 7.2 16 16l0 16c0 44.2-35.8 80-80 80l-16 0zM0 288c0-76.3 35.7-160 112-160 27.3 0 59.7 10.3 82.7 19.3 18.8 7.3 39.9 7.3 58.7 0 22.9-8.9 55.4-19.3 82.7-19.3 76.3 0 112 83.7 112 160 0 128-80 224-160 224-16.5 0-38.1-6.6-51.5-11.3-8.1-2.8-16.9-2.8-25 0-13.4 4.7-35 11.3-51.5 11.3-80 0-160-96-160-224z"/></svg>
               </div>
-              <h3 class="specialization-card__title">Branding</h3>
-              <p class="specialization-card__copy">
+              <h3 class="specialization-card__title" data-i18n="specialization.branding.title">Branding</h3>
+              <p class="specialization-card__copy" data-i18n="specialization.branding.copy">
                 I build brands with purpose, connecting business goals with meaningful impact. From positioning to storytelling, I focus on creating brands that people trust, remember, and believe in.
               </p>
             </article>
@@ -96,8 +107,8 @@
               <div class="specialization-card__icon" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M128 32C92.7 32 64 60.7 64 96l0 240 64 0 0-240 384 0 0 240 64 0 0-240c0-35.3-28.7-64-64-64L128 32zM19.2 384C8.6 384 0 392.6 0 403.2 0 445.6 34.4 480 76.8 480l486.4 0c42.4 0 76.8-34.4 76.8-76.8 0-10.6-8.6-19.2-19.2-19.2L19.2 384z"/></svg>
               </div>
-              <h3 class="specialization-card__title">UX/UI Design</h3>
-              <p class="specialization-card__copy">
+              <h3 class="specialization-card__title" data-i18n="specialization.uxui.title">UX/UI Design</h3>
+              <p class="specialization-card__copy" data-i18n="specialization.uxui.copy">
                 I design clean, functional websites that prioritize user experience and conversion. Every detail is intentional — from layout to flow — ensuring users not only visit, but take action.
               </p>
             </article>
@@ -106,8 +117,8 @@
               <div class="specialization-card__icon" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M32-8c0-13.3 10.7-24 24-24l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L56 16C42.7 16 32 5.3 32-8zM0 128C0 92.7 28.7 64 64 64l192 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 128zm112 32l-42.2 0c-3.2 0-5.8 2.6-5.8 5.8 0 32.1 26 58.2 58.2 58.2l75.6 0c32.1 0 58.2-26 58.2-58.2 0-3.2-2.6-5.8-5.8-5.8L208 160c-19.1 0-36.3 8.4-48 21.7-11.7-13.3-28.9-21.7-48-21.7zm48 117.7c-11.7-13.3-28.9-21.7-48-21.7l-42.2 0c-3.2 0-5.8 2.6-5.8 5.8 0 32.1 26 58.2 58.2 58.2l75.6 0c32.1 0 58.2-26 58.2-58.2 0-3.2-2.6-5.8-5.8-5.8L208 256c-19.1 0-36.3 8.4-48 21.7zM112 352l-42.2 0c-3.2 0-5.8 2.6-5.8 5.8 0 32.1 26 58.2 58.2 58.2l21.8 0 0 32c0 8.8 7.2 16 16 16s16-7.2 16-16l0-32 21.8 0c32.1 0 58.2-26 58.2-58.2 0-3.2-2.6-5.8-5.8-5.8L208 352c-19.1 0-36.3 8.4-48 21.7-11.7-13.3-28.9-21.7-48-21.7z"/></svg>
               </div>
-              <h3 class="specialization-card__title">Packaging</h3>
-              <p class="specialization-card__copy">
+              <h3 class="specialization-card__title" data-i18n="specialization.packaging.title">Packaging</h3>
+              <p class="specialization-card__copy" data-i18n="specialization.packaging.copy">
                 I develop packaging solutions that balance performance, cost, and sustainability. My work focuses on rethinking traditional materials to create smarter, scalable alternatives for real-world use.
               </p>
             </article>
@@ -116,8 +127,8 @@
               <div class="specialization-card__icon" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M296 136l0-48 48 0 0 48-48 0zM288 32c-26.5 0-48 21.5-48 48l0 4-118.4 0C111.2 62.7 89.3 48 64 48 28.7 48 0 76.7 0 112s28.7 64 64 64c25.3 0 47.2-14.7 57.6-36l66.9 0c-58.9 39.6-98.9 105-104 180L80 320c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-3.3 0c5.9-67 48.5-123.4 107.5-149.1 8.6 12.7 23.2 21.1 39.8 21.1l64 0c16.6 0 31.1-8.4 39.8-21.1 59 25.7 101.6 82.1 107.5 149.1l-3.3 0c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-4.5 0c-5-75-45.1-140.4-104-180l66.9 0c10.4 21.3 32.3 36 57.6 36 35.3 0 64-28.7 64-64s-28.7-64-64-64c-25.3 0-47.2 14.7-57.6 36l-118.4 0 0-4c0-26.5-21.5-48-48-48l-64 0zM88 376l48 0 0 48-48 0 0-48zm416 48l0-48 48 0 0 48-48 0z"/></svg>
               </div>
-              <h3 class="specialization-card__title">Digital Experience</h3>
-              <p class="specialization-card__copy">
+              <h3 class="specialization-card__title" data-i18n="specialization.digital.title">Digital Experience</h3>
+              <p class="specialization-card__copy" data-i18n="specialization.digital.copy">
                 I work across digital systems — from e-commerce operations to data-driven decision making — optimizing processes and building tools that support growth and efficiency.
               </p>
             </article>
@@ -129,10 +140,10 @@
         <div class="container">
           <div class="featured-works-header">
             <h2 class="featured-section__title">
-              Featured
+              <span data-i18n="featured.word1">Featured</span>
               <span class="featured-heading-highlight">
                 <span class="featured-works-highlight">
-                  Works
+                  <span data-i18n="featured.word2">Works</span>
                   <span class="featured-eyedrop-ui" aria-hidden="true">
                     <img src="assets/img/eye-drop-icon.svg" class="featured-eyedrop-icon" alt="" />
                     <img src="assets/img/figma-eye-drop-box.svg" class="featured-eyedrop-box" alt="" />
@@ -154,11 +165,11 @@
               data-project-index="1"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Zeragrains Packaging"
+              data-i18n-project-open data-project-title="Zeragrains Packaging" aria-label="Open project: Zeragrains Packaging"
             >
               <img src="assets/img/featured-img/img-1.webp" alt="Zeragrains packaging project" />
               <div class="featured-work-bubble">
-                Sustainable rice packaging rooted in culture.
+                <span data-i18n-caption="1">Sustainable rice packaging rooted in culture.</span>
               </div>
             </article>
 
@@ -169,11 +180,11 @@
               data-project-index="2"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: CQUARE Website"
+              data-i18n-project-open data-project-title="CQUARE Website" aria-label="Open project: CQUARE Website"
             >
               <img src="assets/img/featured-img/img-2.webp" alt="CQUARE website project" />
               <div class="featured-work-bubble">
-                A fashion platform for mindful discovery.
+                <span data-i18n-caption="2">A fashion platform for mindful discovery.</span>
               </div>
             </article>
 
@@ -184,11 +195,11 @@
               data-project-index="3"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Sailer Branding"
+              data-i18n-project-open data-project-title="Sailer Branding" aria-label="Open project: Sailer Branding"
             >
               <img src="assets/img/featured-img/img-3.webp" alt="Sailer branding project" />
               <div class="featured-work-bubble">
-                A brand identity inspired by movement and exploration.
+                <span data-i18n-caption="3">A brand identity inspired by movement and exploration.</span>
               </div>
             </article>
 
@@ -199,11 +210,11 @@
               data-project-index="4"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: LYDUS Gloves Packaging"
+              data-i18n-project-open data-project-title="LYDUS Gloves Packaging" aria-label="Open project: LYDUS Gloves Packaging"
             >
               <img src="assets/img/featured-img/img-4.webp" alt="LYDUS gloves packaging project" />
               <div class="featured-work-bubble">
-                Clear and trustworthy medical packaging system.
+                <span data-i18n-caption="4">Clear and trustworthy medical packaging system.</span>
               </div>
             </article>
 
@@ -214,11 +225,11 @@
               data-project-index="5"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Training Campaign"
+              data-i18n-project-open data-project-title="Training Campaign" aria-label="Open project: Training Campaign"
             >
               <img src="assets/img/featured-img/img-5.webp" alt="Training campaign project" />
               <div class="featured-work-bubble">
-                A campaign designed to drive strong conversions.
+                <span data-i18n-caption="5">A campaign designed to drive strong conversions.</span>
               </div>
             </article>
 
@@ -229,11 +240,11 @@
               data-project-index="6"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: UI Card System"
+              data-i18n-project-open data-project-title="UI Card System" aria-label="Open project: UI Card System"
             >
               <img src="assets/img/featured-img/img-6.webp" alt="UI card system project" />
               <div class="featured-work-bubble">
-                A modular system for clear decision-making.
+                <span data-i18n-caption="6">A modular system for clear decision-making.</span>
               </div>
             </article>
 
@@ -244,11 +255,11 @@
               data-project-index="7"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Vacation Bible School Poster"
+              data-i18n-project-open data-project-title="Vacation Bible School Poster" aria-label="Open project: Vacation Bible School Poster"
             >
               <img src="assets/img/featured-img/img-7.webp" alt="Vacation Bible School poster project" />
               <div class="featured-work-bubble">
-                A playful and structured event visual.
+                <span data-i18n-caption="7">A playful and structured event visual.</span>
               </div>
             </article>
 
@@ -259,11 +270,11 @@
               data-project-index="8"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Medical Brochure"
+              data-i18n-project-open data-project-title="Medical Brochure" aria-label="Open project: Medical Brochure"
             >
               <img src="assets/img/featured-img/img-8.webp" alt="Medical brochure project" />
               <div class="featured-work-bubble">
-                A medical brochure for clarity and trust.
+                <span data-i18n-caption="8">A medical brochure for clarity and trust.</span>
               </div>
             </article>
 
@@ -274,11 +285,11 @@
               data-project-index="9"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Infrastructure Website"
+              data-i18n-project-open data-project-title="Infrastructure Website" aria-label="Open project: Infrastructure Website"
             >
               <img src="assets/img/featured-img/img-9.webp" alt="Infrastructure website project" />
               <div class="featured-work-bubble">
-                A clear and structured corporate web experience.
+                <span data-i18n-caption="9">A clear and structured corporate web experience.</span>
               </div>
             </article>
 
@@ -289,11 +300,11 @@
               data-project-index="10"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: VitalNest Branding"
+              data-i18n-project-open data-project-title="VitalNest Branding" aria-label="Open project: VitalNest Branding"
             >
               <img src="assets/img/featured-img/img-10.webp" alt="VitalNest branding project" />
               <div class="featured-work-bubble">
-                A calm, nature-inspired wellness identity.
+                <span data-i18n-caption="10">A calm, nature-inspired wellness identity.</span>
               </div>
             </article>
 
@@ -304,11 +315,11 @@
               data-project-index="11"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: PLE Project"
+              data-i18n-project-open data-project-title="PLE Project" aria-label="Open project: PLE Project"
             >
               <img src="assets/img/featured-img/img-11.webp" alt="PLE project" />
               <div class="featured-work-bubble">
-                A system-driven brand and product experience.
+                <span data-i18n-caption="11">A system-driven brand and product experience.</span>
               </div>
             </article>
 
@@ -319,11 +330,11 @@
               data-project-index="12"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Believe Campaign"
+              data-i18n-project-open data-project-title="Believe Campaign" aria-label="Open project: Believe Campaign"
             >
               <img src="assets/img/featured-img/img-12.webp" alt="Believe campaign project" />
               <div class="featured-work-bubble">
-                A campaign built to inspire and connect.
+                <span data-i18n-caption="12">A campaign built to inspire and connect.</span>
               </div>
             </article>
 
@@ -334,11 +345,11 @@
               data-project-index="13"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Training Poster"
+              data-i18n-project-open data-project-title="Training Poster" aria-label="Open project: Training Poster"
             >
               <img src="assets/img/featured-img/img-13.webp" alt="Training poster project" />
               <div class="featured-work-bubble">
-                A bold layout for high visibility promotion.
+                <span data-i18n-caption="13">A bold layout for high visibility promotion.</span>
               </div>
             </article>
 
@@ -349,11 +360,11 @@
               data-project-index="14"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Nathan Trading Website"
+              data-i18n-project-open data-project-title="Nathan Trading Website" aria-label="Open project: Nathan Trading Website"
             >
               <img src="assets/img/featured-img/img-14.webp" alt="Nathan Trading website project" />
               <div class="featured-work-bubble">
-                A corporate site for global manufacturing presence.
+                <span data-i18n-caption="14">A corporate site for global manufacturing presence.</span>
               </div>
             </article>
 
@@ -364,11 +375,11 @@
               data-project-index="15"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Medical Brochure"
+              data-i18n-project-open data-project-title="Medical Brochure" aria-label="Open project: Medical Brochure"
             >
               <img src="assets/img/featured-img/img-15.webp" alt="Medical brochure project" />
               <div class="featured-work-bubble">
-                A medical brochure for clarity and trust.
+                <span data-i18n-caption="15">A medical brochure for clarity and trust.</span>
               </div>
             </article>
 
@@ -379,11 +390,11 @@
               data-project-index="16"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Zera Brochure"
+              data-i18n-project-open data-project-title="Zera Brochure" aria-label="Open project: Zera Brochure"
             >
               <img src="assets/img/featured-img/img-16.webp" alt="Zera Brochure project" />
               <div class="featured-work-bubble">
-                A wellness brochure with a calm, natural visual system.
+                <span data-i18n-caption="16">A wellness brochure with a calm, natural visual system.</span>
               </div>
             </article>
 
@@ -394,11 +405,11 @@
               data-project-index="17"
               aria-haspopup="dialog"
               aria-controls="featured-work-modal"
-              aria-label="Open project: Poster Design for Youth Camp"
+              data-i18n-project-open data-project-title="Poster Design for Youth Camp" aria-label="Open project: Poster Design for Youth Camp"
             >
               <img src="assets/img/featured-img/img-17.webp" alt="Poster Design for Youth Camp project" />
               <div class="featured-work-bubble">
-                A bold poster design for youth event promotion.
+                <span data-i18n-caption="17">A bold poster design for youth event promotion.</span>
               </div>
             </article>
           </div>
@@ -407,7 +418,7 @@
 
       <section class="about-section" id="about">
         <div class="container">
-          <h2 class="about-heading">
+          <h2 class="about-heading" data-i18n-html="about.headingHtml">
             About <span class="about-heading-wrong">Mee</span>
           </h2>
           <div class="about-grid">
@@ -417,14 +428,14 @@
               <span class="about-bio-handle about-bio-handle--bl" aria-hidden="true"></span>
               <span class="about-bio-handle about-bio-handle--br" aria-hidden="true"></span>
               <div class="about-bio-inner">
-                <p><strong>Hi, I&rsquo;m Nathan!</strong></p>
-                <p>
+                <p data-i18n-html="about.bio1"><strong>Hi, I&rsquo;m Nathan!</strong></p>
+                <p data-i18n="about.bio2">
                   I’m a multidisciplinary designer who enjoys working across branding, product, and digital experiences.
                 </p>
-                <p>
+                <p data-i18n="about.bio3">
                   I didn’t start with design – I started with curiosity. I’ve always been interested in how things work, and over time that turned into building things that solve real problems. Growing up around a social enterprise shaped how I think about design – not just as something that looks good, but something that should be useful and meaningful.
                 </p>
-                <p>
+                <p data-i18n="about.bio4">
                   Today, I work across different areas – from brand identity and packaging to UI and digital products – depending on what the problem needs. I like being involved end-to-end, from idea to execution.
                 </p>
               </div>
@@ -466,17 +477,17 @@
 
               <div class="about-info-grid">
                 <article class="about-card-light">
-                  <p>
+                  <p data-i18n="about.cardLight">
                     I design across branding, UI, and digital products, bringing structure, clarity, and usability into every project.
                   </p>
                 </article>
 
                 <article class="about-card-cream">
                   <p>
-                    I enjoy working across disciplines and figuring things out from scratch – whether it's building a brand, designing a system, or turning an idea into something real
+                    <span data-i18n="about.cardCream">I enjoy working across disciplines and figuring things out from scratch – whether it's building a brand, designing a system, or turning an idea into something real</span>
                     <br>
                     <br>
-                    Let&rsquo;s build something great together! 🚀
+                    <span data-i18n="about.cta">Let&rsquo;s build something great together! 🚀</span>
                   </p>
                   <div class="about-contact-row">
                     <a href="https://www.linkedin.com/in/tirapong-saiyasak-47a87021b" target="_blank" class="about-contact-pill">LinkedIn</a>
@@ -512,6 +523,7 @@
               type="button"
               class="featured-modal__arrow left"
               data-featured-carousel-prev
+              data-i18n-aria="modal.prev"
               aria-label="Previous image"
             >
               <svg viewBox="0 0 256 512" aria-hidden="true" focusable="false">
@@ -527,6 +539,7 @@
               type="button"
               class="featured-modal__arrow right"
               data-featured-carousel-next
+              data-i18n-aria="modal.next"
               aria-label="Next image"
             >
               <svg viewBox="0 0 256 512" aria-hidden="true" focusable="false">
@@ -535,7 +548,7 @@
                 />
               </svg>
             </button>
-            <div class="featured-modal__dots" data-featured-dots aria-label="Image carousel"></div>
+            <div class="featured-modal__dots" data-featured-dots data-i18n-aria="modal.carousel" aria-label="Image carousel"></div>
           </div>
 
           <div class="featured-modal__body featured-modal__content">
@@ -548,8 +561,8 @@
     </div>
 
     <footer class="site-footer" id="contact">
-      <p class="footer-left">Designed &amp; Developed<br />by Nathan Sai</p>
-      <p class="footer-right">&copy; 2026<br />All Rights Reserved</p>
+      <p class="footer-left" data-i18n-html="footer.left">Designed &amp; Developed<br />by Nathan Sai</p>
+      <p class="footer-right" data-i18n-html="footer.right">&copy; 2026<br />All Rights Reserved</p>
     </footer>
   </body>
 </html>
