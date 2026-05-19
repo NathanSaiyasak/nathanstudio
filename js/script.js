@@ -451,6 +451,30 @@
       tags: ["Graphic Design"],
       images: ["assets/img/featured-img/img-17.webp", "assets/img/featured-img/img-17-1.webp"],
     },
+    {
+      title: "BASCII 004",
+      description:
+        "A comprehensive visual campaign for BASCII 004, a secret-agent-themed Rub Nong orientation. The system includes teaser graphics, timeline materials, TOP SECRET reveals, a character poster, formal invitation, and a bold key visual banner in a high-contrast red, black, and cream palette.",
+      tags: ["Graphic Design", "Brand Identity"],
+      images: [
+        "assets/img/featured-img/img-18.webp",
+        "assets/img/featured-img/img-18-1.webp",
+        "assets/img/featured-img/img-18-2.webp",
+        "assets/img/featured-img/img-18-3.webp",
+        "assets/img/featured-img/img-18-4.webp",
+      ],
+    },
+    {
+      title: "Tachy",
+      description:
+        "Brand identity and digital presentation for Tachy, a travel-inspired lifestyle brand. The work includes a gradient ribbon logo, italic wordmark, mobile UI mockups, and soft gradient brand elements designed for a clean, energetic digital-first presence.",
+      tags: ["Brand Identity", "Logo Design", "UX/UI Design"],
+      images: [
+        "assets/img/featured-img/img-19.webp",
+        "assets/img/featured-img/img-19-1.webp",
+        "assets/img/featured-img/img-19-2.webp",
+      ],
+    },
   ];
   const featuredWorkCards = Array.from(document.querySelectorAll(".featured-work-card[data-project-index]"));
   const featuredWorkFilters = document.querySelector("[data-featured-filters]");
