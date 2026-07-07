@@ -475,6 +475,108 @@
         "assets/img/featured-img/img-19-2.webp",
       ],
     },
+    {
+      title: "Event Merchandise Design",
+      description:
+        "Custom merchandise created for an event, designed to extend the event identity into a wearable and memorable visual piece. The design focused on creating something clean, recognizable, and community-driven while still feeling polished enough for real event use.",
+      tags: ["Merch"],
+      images: [
+        "assets/img/featured-img/img-20.webp",
+        "assets/img/featured-img/img-20-1.webp",
+        "assets/img/featured-img/img-20-2.webp",
+        "assets/img/featured-img/img-20-3.webp",
+        "assets/img/featured-img/img-20-4.webp",
+      ],
+    },
+    {
+      title: "zera Packaging Design",
+      description:
+        "Packaging design for zera, a purpose-driven natural food brand. The design balances a warm, healthy brand identity with clear product communication, using natural colors, clean hierarchy, and shelf-ready presentation to make the product feel trustworthy and approachable.",
+      tags: ["Packaging Design"],
+      images: [
+        "assets/img/featured-img/img-21.webp",
+        "assets/img/featured-img/img-21-1.webp",
+        "assets/img/featured-img/img-21-2.webp",
+        "assets/img/featured-img/img-21-3.webp",
+      ],
+    },
+    {
+      title: "zera Website",
+      description:
+        "A live brand and product website for zera, created to introduce the brand story, product range, and purpose-driven mission. The site focuses on natural visuals, calm typography, product education, and a warm user experience that reflects the brand's healthy and community-centered identity.",
+      tags: ["Website Design"],
+      link: "https://nathantrad.com/zera/index.html",
+      images: [
+        "assets/img/featured-img/img-22.webp",
+        "assets/img/featured-img/img-22-1.webp",
+        "assets/img/featured-img/img-22-2.webp",
+      ],
+    },
+    {
+      title: "Mekong Website",
+      description:
+        "A live website for Mekong Evangelical organization, designed to communicate its mission, programs, and community impact with a clear and accessible structure. The work focused on improving credibility, storytelling, and ease of navigation for visitors, supporters, and donors.",
+      tags: ["Website Design"],
+      link: "https://mekongevan.org",
+      images: [
+        "assets/img/featured-img/img-23.webp",
+        "assets/img/featured-img/img-23-1.webp",
+        "assets/img/featured-img/img-23-2.webp",
+      ],
+    },
+    {
+      title: "LYDUS Gloves Website",
+      description:
+        "A professional website for LYDUS Gloves, a nitrile glove brand, designed to present product information, brand credibility, and B2B value clearly. The site emphasizes trust, clarity, and practical product presentation for buyers, partners, and business customers.",
+      tags: ["Website Design"],
+      link: "https://lydusgloves.com",
+      images: [
+        "assets/img/featured-img/img-24.webp",
+        "assets/img/featured-img/img-24-1.webp",
+        "assets/img/featured-img/img-24-2.webp",
+        "assets/img/featured-img/img-24-3.webp",
+      ],
+    },
+    {
+      title: "Startup Pitch Deck",
+      description:
+        "Pitch deck for a startup project, structured to communicate the problem, solution, market opportunity, business model, and go-to-market strategy in a clear investor-friendly format. The design focused on concise storytelling, visual hierarchy, and making the business idea easy to understand.",
+      tags: ["Pitch Deck"],
+      images: [
+        "assets/img/featured-img/img-25.webp",
+        "assets/img/featured-img/img-25-1.webp",
+        "assets/img/featured-img/img-25-2.webp",
+        "assets/img/featured-img/img-25-3.webp",
+        "assets/img/featured-img/img-25-4.webp",
+        "assets/img/featured-img/img-25-5.webp",
+        "assets/img/featured-img/img-25-6.webp",
+      ],
+    },
+    {
+      title: "LYDUS Brand Pitch Deck",
+      description:
+        "Pitch deck for the LYDUS brand, designed to present the product, market positioning, business opportunity, and growth strategy. The deck focused on creating a polished B2B brand narrative for sales conversations, partnerships, and investor-facing presentations.",
+      tags: ["Pitch Deck"],
+      images: [
+        "assets/img/featured-img/img-26.webp",
+        "assets/img/featured-img/img-26-1.webp",
+        "assets/img/featured-img/img-26-2.webp",
+        "assets/img/featured-img/img-26-3.webp",
+        "assets/img/featured-img/img-26-4.webp",
+        "assets/img/featured-img/img-26-5.webp",
+        "assets/img/featured-img/img-26-6.webp",
+      ],
+    },
+    {
+      title: "NILA Solutions Brochure",
+      description:
+        "A brochure design for NILA Solutions, a company offering construction-related services such as stockpile auditing, cut and fill work, videography, and mapping. The goal was to communicate technical services in a clear, visual, and contractor-friendly way while making the company feel professional, capable, and easy to understand.",
+      tags: ["Brochure Design"],
+      images: [
+        "assets/img/featured-img/img-27.webp",
+        "assets/img/featured-img/img-27-2.webp",
+      ],
+    },
   ];
   const featuredWorkCards = Array.from(document.querySelectorAll(".featured-work-card[data-project-index]"));
   const featuredWorkFilters = document.querySelector("[data-featured-filters]");
@@ -488,11 +590,14 @@
     const uniqueTags = [
       "Brand Identity",
       "Packaging Design",
+      "Website Design",
+      "UX/UI Design",
       "Logo Design",
       "Brochure Design",
       "3D Visualization",
-      "UX/UI Design",
       "Graphic Design",
+      "Merch",
+      "Pitch Deck",
     ];
 
     function matchesSelectedTags(projectTags) {
@@ -556,12 +661,34 @@
   const featuredModalTitle = featuredModal ? featuredModal.querySelector("#featured-modal-title") : null;
   const featuredModalDescription = featuredModal ? featuredModal.querySelector("[data-featured-description]") : null;
   const featuredModalTags = featuredModal ? featuredModal.querySelector("[data-featured-tags]") : null;
+  const featuredModalLink = featuredModal ? featuredModal.querySelector("[data-featured-link]") : null;
   const featuredModalPrev = featuredModal ? featuredModal.querySelector("[data-featured-carousel-prev]") : null;
   const featuredModalNext = featuredModal ? featuredModal.querySelector("[data-featured-carousel-next]") : null;
   const featuredModalPanel = featuredModal ? featuredModal.querySelector(".featured-modal__panel") : null;
   let featuredModalLastFocus = null;
   let featuredCarouselIndex = 0;
   let featuredCarouselSlideCount = 0;
+  let featuredCarouselIsAnimating = false;
+  let featuredCarouselAnimateTimer = null;
+
+  function beginFeaturedCarouselAnimation() {
+    featuredCarouselIsAnimating = true;
+    if (featuredCarouselAnimateTimer) {
+      window.clearTimeout(featuredCarouselAnimateTimer);
+    }
+    featuredCarouselAnimateTimer = window.setTimeout(function () {
+      featuredCarouselIsAnimating = false;
+      featuredCarouselAnimateTimer = null;
+    }, 380);
+  }
+
+  function resetFeaturedCarouselAnimation() {
+    featuredCarouselIsAnimating = false;
+    if (featuredCarouselAnimateTimer) {
+      window.clearTimeout(featuredCarouselAnimateTimer);
+      featuredCarouselAnimateTimer = null;
+    }
+  }
 
   function applyFeaturedCarouselTransform() {
     if (!featuredModalViewport || !featuredModalTrack) {
@@ -642,6 +769,7 @@
     activeFeaturedProjectIndex = null;
 
     featuredModal.classList.remove("is-single");
+    resetFeaturedCarouselAnimation();
     featuredCarouselIndex = 0;
     featuredCarouselSlideCount = 0;
 
@@ -685,6 +813,10 @@
     if (featuredCarouselSlideCount <= 1) {
       return;
     }
+    if (featuredCarouselIsAnimating) {
+      return;
+    }
+    beginFeaturedCarouselAnimation();
     featuredCarouselIndex += delta;
     applyFeaturedCarouselTransform();
     updateFeaturedCarouselUi();
@@ -696,9 +828,19 @@
     }
     if (featuredCarouselSlideCount === 1) {
       featuredCarouselIndex = 0;
-    } else {
-      featuredCarouselIndex = index + 1;
+      applyFeaturedCarouselTransform();
+      updateFeaturedCarouselUi();
+      return;
     }
+    if (featuredCarouselIsAnimating) {
+      return;
+    }
+    const targetIndex = index + 1;
+    if (targetIndex === featuredCarouselIndex) {
+      return;
+    }
+    beginFeaturedCarouselAnimation();
+    featuredCarouselIndex = targetIndex;
     applyFeaturedCarouselTransform();
     updateFeaturedCarouselUi();
   }
@@ -710,6 +852,7 @@
     img.src = src;
     img.alt = projectTitle + " — gallery image";
     img.loading = loading ? "eager" : "lazy";
+    img.decoding = "async";
     img.addEventListener("load", layoutFeaturedCarousel);
     img.addEventListener("error", layoutFeaturedCarousel);
     slide.appendChild(img);
@@ -742,6 +885,24 @@
       featuredModalTags.appendChild(li);
     });
 
+    if (featuredModalLink) {
+      featuredModalLink.setAttribute("hidden", "");
+      featuredModalLink.setAttribute("aria-hidden", "true");
+      featuredModalLink.removeAttribute("href");
+
+      var isWebsiteProject =
+        Array.isArray(project.tags) && project.tags.includes("Website Design");
+      var hasValidProjectLink =
+        typeof project.link === "string" && project.link.trim().length > 0;
+      var shouldShowVisitWebsite = isWebsiteProject && hasValidProjectLink;
+
+      if (shouldShowVisitWebsite) {
+        featuredModalLink.href = project.link.trim();
+        featuredModalLink.removeAttribute("hidden");
+        featuredModalLink.removeAttribute("aria-hidden");
+      }
+    }
+
     if (featuredModalPrev) {
       featuredModalPrev.setAttribute("aria-label", t("modal.prev"));
     }
@@ -751,6 +912,8 @@
     if (featuredModalDots) {
       featuredModalDots.setAttribute("aria-label", t("modal.carousel"));
     }
+
+    resetFeaturedCarouselAnimation();
 
     const imageCount = project.images.length;
     featuredCarouselSlideCount = imageCount;
@@ -779,10 +942,14 @@
       featuredModalDots.appendChild(dot);
     });
 
+    featuredModalTrack.style.transition = "none";
+
     window.requestAnimationFrame(function () {
       layoutFeaturedCarousel();
       window.requestAnimationFrame(function () {
         layoutFeaturedCarousel();
+        void featuredModalTrack.offsetHeight;
+        featuredModalTrack.style.transition = "";
         const focusTarget = featuredModalPanel || featuredModalTitle;
         if (focusTarget && typeof focusTarget.focus === "function") {
           focusTarget.focus({ preventScroll: true });
@@ -822,6 +989,113 @@
     featuredModalNext.addEventListener("click", function () {
       scrollFeaturedCarouselBy(1);
     });
+
+    (function initFeaturedCarouselDrag() {
+      let isDragging = false;
+      let pointerId = null;
+      let startX = 0;
+      let startY = 0;
+      let dragDelta = 0;
+      let lockedHorizontal = false;
+      let decidedDirection = false;
+
+      function currentWidth() {
+        return featuredModalViewport ? featuredModalViewport.clientWidth : 0;
+      }
+
+      function onPointerDown(event) {
+        if (event.button !== undefined && event.button !== 0) {
+          return;
+        }
+        if (featuredCarouselSlideCount <= 1 || featuredCarouselIsAnimating) {
+          return;
+        }
+        isDragging = true;
+        pointerId = event.pointerId;
+        startX = event.clientX;
+        startY = event.clientY;
+        dragDelta = 0;
+        lockedHorizontal = false;
+        decidedDirection = false;
+        featuredModalTrack.style.transition = "none";
+        featuredModalViewport.classList.add("is-dragging");
+      }
+
+      function onPointerMove(event) {
+        if (!isDragging || event.pointerId !== pointerId) {
+          return;
+        }
+
+        const deltaX = event.clientX - startX;
+        const deltaY = event.clientY - startY;
+
+        if (!decidedDirection) {
+          if (Math.abs(deltaX) < 6 && Math.abs(deltaY) < 6) {
+            return;
+          }
+          decidedDirection = true;
+          lockedHorizontal = Math.abs(deltaX) >= Math.abs(deltaY);
+          if (lockedHorizontal && featuredModalViewport.setPointerCapture) {
+            try {
+              featuredModalViewport.setPointerCapture(pointerId);
+            } catch (error) {
+              /* ignore */
+            }
+          }
+        }
+
+        if (!lockedHorizontal) {
+          return;
+        }
+
+        event.preventDefault();
+        dragDelta = deltaX;
+        const w = currentWidth();
+        if (w >= 2) {
+          featuredModalTrack.style.transform =
+            "translateX(" + (-featuredCarouselIndex * w + dragDelta) + "px)";
+        }
+      }
+
+      function finishDrag() {
+        if (!isDragging) {
+          return;
+        }
+        isDragging = false;
+        featuredModalViewport.classList.remove("is-dragging");
+        if (pointerId !== null && featuredModalViewport.releasePointerCapture) {
+          try {
+            featuredModalViewport.releasePointerCapture(pointerId);
+          } catch (error) {
+            /* ignore */
+          }
+        }
+
+        featuredModalTrack.style.transition = "";
+
+        const w = currentWidth();
+        const threshold = w > 0 ? Math.min(60, Math.max(40, w * 0.18)) : 50;
+        const delta = dragDelta;
+        pointerId = null;
+        dragDelta = 0;
+
+        if (lockedHorizontal && Math.abs(delta) >= threshold) {
+          scrollFeaturedCarouselBy(delta < 0 ? 1 : -1);
+        } else {
+          applyFeaturedCarouselTransform();
+        }
+        lockedHorizontal = false;
+        decidedDirection = false;
+      }
+
+      featuredModalViewport.addEventListener("pointerdown", onPointerDown);
+      featuredModalViewport.addEventListener("pointermove", onPointerMove);
+      featuredModalViewport.addEventListener("pointerup", finishDrag);
+      featuredModalViewport.addEventListener("pointercancel", finishDrag);
+      featuredModalViewport.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+      });
+    })();
 
     featuredWorkCards.forEach(function (card) {
       function openFromCard() {
@@ -969,11 +1243,17 @@
         }
 
         if (currency === "thb") {
-          const usdAmount = parseUsdAmount(usdDisplay);
-          if (!Number.isFinite(usdAmount)) {
-            return;
+          const thbOverride = badge.getAttribute("data-price-thb");
+          let thbDisplay;
+          if (thbOverride && thbOverride.trim().length > 0) {
+            thbDisplay = thbOverride.trim();
+          } else {
+            const usdAmount = parseUsdAmount(usdDisplay);
+            if (!Number.isFinite(usdAmount)) {
+              return;
+            }
+            thbDisplay = formatThbFromUsd(usdAmount);
           }
-          const thbDisplay = formatThbFromUsd(usdAmount);
           badge.textContent = thbDisplay;
           badge.setAttribute("aria-label", "Price " + thbDisplay);
           return;

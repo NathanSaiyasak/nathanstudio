@@ -31,6 +31,46 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "LINE Seed Sans TH";
+  src: url("assets/font/LINE%20Seeds%20Sans%20TH/LINESeedSansTH_W_Th.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LINE Seed Sans TH";
+  src: url("assets/font/LINE%20Seeds%20Sans%20TH/LINESeedSansTH_W_Rg.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LINE Seed Sans TH";
+  src: url("assets/font/LINE%20Seeds%20Sans%20TH/LINESeedSansTH_W_Bd.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LINE Seed Sans TH";
+  src: url("assets/font/LINE%20Seeds%20Sans%20TH/LINESeedSansTH_W_XBd.woff") format("woff");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LINE Seed Sans TH";
+  src: url("assets/font/LINE%20Seeds%20Sans%20TH/LINESeedSansTH_W_He.woff") format("woff");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
 :root {
   --bg: #fffdfa;
   --surface: #ebe7dc;
@@ -43,7 +83,7 @@
   --gold-soft: #cfad6d;
   --line: #d2c7b2;
   --font-english: "Metropolis", "Avenir Next", "Avenir", "Helvetica Neue", Arial, sans-serif;
-  --font-thai: "Noto Sans Thai", var(--font-english);
+  --font-thai: "LINE Seed Sans TH", "Noto Sans Thai", var(--font-english);
   --font-main: var(--font-english);
 
   /* Type scale (rem; responsiveness via html font-size + breakpoint overrides) */
@@ -848,6 +888,7 @@ img {
   color: #2d2d2d;
   border-radius: 999px;
   padding: 0.42rem 0.85rem;
+  font-family: var(--font-main);
   font-size: var(--font-size-xs);
   font-weight: 600;
   line-height: 1;
@@ -926,20 +967,7 @@ img {
 }
 
 .featured-work-bubble {
-  position: absolute;
-  bottom: 0.875rem;
-  left: 0.875rem;
-  z-index: 2;
-  max-width: calc(100% - 1.75rem);
-  padding: 0.625rem;
-  border-radius: 0.875rem 0.875rem 0.875rem 0;
-  background: #fff;
-  color: var(--ink);
-  font-family: var(--font-main);
-  font-size: var(--font-size-xs);
-  line-height: var(--line-tight);
-  font-weight: 600;
-  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 10%);
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -1154,6 +1182,25 @@ img {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.featured-modal__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.featured-modal.is-single .featured-modal__viewport {
+  cursor: default;
+  touch-action: auto;
+}
+
+.featured-modal__slide img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .featured-modal__track {
@@ -1355,8 +1402,8 @@ img {
   position: static;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.65rem 0 0;
+  gap: 0.25rem;
+  margin: 0;
   padding: 0;
   list-style: none;
   flex-shrink: 0;
@@ -1371,13 +1418,48 @@ img {
   padding: 0.2rem 0.65rem 0.1rem;
   border-radius: 999px;
   background: transparent;
-  font-size: var(--font-size-xs);
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 500;
   color: var(--gold-soft);
   border: 1px solid var(--gold-soft);
   overflow-wrap: anywhere;
   word-break: normal;
   box-sizing: border-box;
+}
+
+.featured-modal__cta[hidden] {
+  display: none !important;
+}
+
+.featured-modal__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 0.85rem;
+  margin-bottom: 0.35rem;
+  padding: 0.575rem 0.85rem 0.4rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #fff;
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.featured-modal__cta:hover {
+  background: #a87834;
+}
+
+.featured-modal__cta:focus-visible {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 2px;
 }
 
 body.featured-modal-open {
